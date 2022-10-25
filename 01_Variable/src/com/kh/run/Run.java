@@ -11,7 +11,7 @@ public class Run {
 		
 		B_KeyboardInput b = new B_KeyboardInput();
 		//b.inputTest2();
-		//b.inputTest3();
+		//b.inputTest3();s
 		//b.inputTest4();
 		//b.charAtTest();
 		
