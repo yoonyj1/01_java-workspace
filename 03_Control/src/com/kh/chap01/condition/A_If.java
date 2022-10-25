@@ -110,4 +110,128 @@ public class A_If {
 		
 		sc.close();
 	}
+	
+	public void method4() {
+		//사용자에게 나이를 입력받아 어린이, 청소년, 성인 ..
+		//13세 이하 어린이
+		//13세 초과 19세 이하 청소년
+		//19세 초과 성인
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("나이(숫자만 입력) : ");
+		int age = sc.nextInt();
+		
+		/*
+		if (age <= 13) {
+			System.out.println("어린이");
+		}else if (age <= 19){
+			System.out.println("청소년");
+		}else {
+			System.out.println("성인");
+		}
+		*/
+		
+		String result;
+		
+		if (age <= 13) {
+			result = "어린이";
+		}else if (age <= 19){
+			result = "청소년";
+		}else {
+			result = "성인";
+		}
+		
+		System.out.println(result);
+		
+		sc.close();
+	}
+	
+	public void method5() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("이름 : ");
+		String name = sc.nextLine();
+		
+		System.out.print("성별(M/F) : ");
+		char gender = sc.nextLine().charAt(0);
+		
+		//xxx님은 x학생이다.
+		
+		/*if (gender == 'M' || gender == 'm') {
+			System.out.println(name + "님은 남학생이다.");
+		}else if (gender == 'f' || gender == 'F') {
+			System.out.println(name + "님은 여학생이다.");
+		}*/
+		
+		String result = ""; //변수를 미리 세팅할 때 초기화 습관들이기
+		
+		if (gender == 'M' || gender == 'm') {
+			result = "남학생";
+		}else if (gender == 'f' || gender == 'F') {
+			result = "여학생";
+		}else {
+			System.out.println("성별을 잘못 입력하셨습니다.");
+			return; //return : 해당 메소드 자체를 빠져나가는 구문
+		}
+		
+		//xxx님은 xxx입니다.
+		System.out.println(name + "님은 " + result + "입니다.");
+		
+		sc.close();
+	}
+	
+	//특이케이스
+	public void method6() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("이름 : ");
+		String name = sc.nextLine();
+		
+		/*
+		if (name == "차은우") {
+			System.out.println("차은우님 반갑습니다.");
+		}else {
+			System.out.println("안녕히가세요");
+		}
+		*/
+		
+		/*
+		 * 				1		1		2	4		8	4		8		2
+		 * 기본자료형 : boolean, byte, short, int, long, float, double, char
+		 * 참조자료형 : String
+		 * 
+		 * 기본자료형끼리 동등비교 시 ==, != 사용가능(정상적으로 비교O)
+		 * 단, 참조자료형은 동등비교시 ==, != 사용시 정상적으로 비교가 안됨.
+		 * 		=> equals() 메소드를 이용해서 비교
+		 * 			문자열.equals(문자열);
+		 */
+		
+		if (name.equals("차은우")) {
+			System.out.println("차은우님 반갑습니다.");
+		}else {
+			System.out.println("안녕히가세요");
+		}
+		
+		sc.close();
+	}
+	
+	public void method7() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 입력(양수만) : ");
+		int num = sc.nextInt();
+		
+		if (num > 0) {//양수일 경우
+			if(num % 2 == 0) {//양수이면서 짝수일 경우
+				System.out.println("짝수입니다.");
+			}else {//양수이면서 홀수일 경우
+				System.out.println("홀수입니다.");
+			}
+		}else {//양수가 아닐 경우
+			System.out.println("양수가 아닙니다. 잘못 입력하셨습니다.");
+		}
+		
+		sc.close();
+	}
 }

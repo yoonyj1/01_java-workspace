@@ -9,7 +9,11 @@ public class ConditionRun {
 		A_If a = new A_If();
 		//a.method1(); //단독 if 문
 		//a.method2(); //if - else문
-		a.method3(); //if - else if - else문
+		//a.method3(); //if - else if - else문
+		//a.method4();
+		//a.method5();
+		//a.method6();
+		a.method7(); //if문 중첩사용
 	}
 
 }
