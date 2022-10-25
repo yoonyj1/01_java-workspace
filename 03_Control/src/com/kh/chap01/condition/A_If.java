@@ -71,7 +71,7 @@ public class A_If {
 		
 		if (num > 0) {
 			System.out.println("양수다");
-		}else {
+		} else {
 			System.out.println("양수가 아니다.");
 		}
 		
@@ -102,9 +102,9 @@ public class A_If {
 		
 		if (num > 0) {
 			System.out.println("양수다.");
-		}else if (num == 0) {
+		} else if (num == 0) {
 			System.out.println("0이다.");
-		}else /*if (num < 0)*/ {
+		} else /*if (num < 0)*/ {
 			System.out.println("음수다.");
 		}
 		
@@ -125,9 +125,9 @@ public class A_If {
 		/*
 		if (age <= 13) {
 			System.out.println("어린이");
-		}else if (age <= 19){
+		} else if (age <= 19){
 			System.out.println("청소년");
-		}else {
+		} else {
 			System.out.println("성인");
 		}
 		*/
@@ -136,9 +136,9 @@ public class A_If {
 		
 		if (age <= 13) {
 			result = "어린이";
-		}else if (age <= 19){
+		} else if (age <= 19){
 			result = "청소년";
-		}else {
+		} else {
 			result = "성인";
 		}
 		
@@ -160,7 +160,7 @@ public class A_If {
 		
 		/*if (gender == 'M' || gender == 'm') {
 			System.out.println(name + "님은 남학생이다.");
-		}else if (gender == 'f' || gender == 'F') {
+		} else if (gender == 'f' || gender == 'F') {
 			System.out.println(name + "님은 여학생이다.");
 		}*/
 		
@@ -168,9 +168,9 @@ public class A_If {
 		
 		if (gender == 'M' || gender == 'm') {
 			result = "남학생";
-		}else if (gender == 'f' || gender == 'F') {
+		} else if (gender == 'f' || gender == 'F') {
 			result = "여학생";
-		}else {
+		} else {
 			System.out.println("성별을 잘못 입력하셨습니다.");
 			return; //return : 해당 메소드 자체를 빠져나가는 구문
 		}
@@ -191,7 +191,7 @@ public class A_If {
 		/*
 		if (name == "차은우") {
 			System.out.println("차은우님 반갑습니다.");
-		}else {
+		} else {
 			System.out.println("안녕히가세요");
 		}
 		*/
@@ -209,7 +209,7 @@ public class A_If {
 		
 		if (name.equals("차은우")) {
 			System.out.println("차은우님 반갑습니다.");
-		}else {
+		} else {
 			System.out.println("안녕히가세요");
 		}
 		
@@ -225,10 +225,10 @@ public class A_If {
 		if (num > 0) {//양수일 경우
 			if(num % 2 == 0) {//양수이면서 짝수일 경우
 				System.out.println("짝수입니다.");
-			}else {//양수이면서 홀수일 경우
+			} else {//양수이면서 홀수일 경우
 				System.out.println("홀수입니다.");
 			}
-		}else {//양수가 아닐 경우
+		} else {//양수가 아닐 경우
 			System.out.println("양수가 아닙니다. 잘못 입력하셨습니다.");
 		}
 		
