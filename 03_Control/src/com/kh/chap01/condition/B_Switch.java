@@ -104,4 +104,45 @@ public class B_Switch {
 		
 		sc.close();
 	}
+	public void method3() {
+		//등급별 권한
+		//1. 관리권한, 글쓰기 ,읽기권한
+		//2. 글쓰기, 읽기권한
+		//3. 읽기권한
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("등급(정수) : ");
+		int level = sc.nextInt();
+		
+		switch (level) {
+		case 1 : 
+			System.out.println("관리권한");
+			
+		case 2 :
+			System.out.println("글쓰기 권한");
+			
+		case 3 :
+			System.out.println("읽기 권한");
+		}
+		
+		sc.close();
+	}
+	
+	public void method4() {
+		//월을 입력받아 해당 월의 마지막 날짜 출력
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("월 입력");
+		int month = sc.nextInt();
+		
+		switch (month) {
+		case 1 : 
+			
+		case 2 : 
+		}
+	}
 }
+
+
