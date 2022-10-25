@@ -15,7 +15,7 @@ public class Run {
 		
 		
 		//var1.practice1();
-		//var2.practice2();
+		//var2.practice2(); 
 		//var3.practice3();
 		var4.practice4();
 		

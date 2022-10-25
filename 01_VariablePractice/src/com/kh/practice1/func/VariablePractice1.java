@@ -17,7 +17,7 @@ public class VariablePractice1 {
 		
 		sc.nextLine();
 		
-		System.out.print("키를 입력하세요 : ");
+		System.out.print("키를  입력하세요 : ");
 		double height = sc.nextDouble();
 		
 		System.out.println("키 " + height + "인 " + age + "살 " + gender + "자 " + name + "님 반갑습니다^^");

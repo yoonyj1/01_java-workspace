@@ -2,7 +2,7 @@ package com.kh.variable;
 
 public class D_Cast {
 	
-	/*
+	/* 
 	 * * 형변환 : 값의 자료형을 바꾸는 것
 	 * 
 	 * * 컴퓨터에서의 값 처리 규칙 (즉, 형변환이 필요한 상황)

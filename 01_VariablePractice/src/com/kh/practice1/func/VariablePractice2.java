@@ -6,7 +6,7 @@ public class VariablePractice2 {
 
 	public void practice2() {
 		Scanner sc =new Scanner(System.in);
-		
+		 
 		System.out.print("첫 번째 정수 : ");
 		int num1 = sc.nextInt();
 		
