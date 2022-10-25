@@ -13,7 +13,9 @@ public class Run {
 		//c.practice5();
 		//c.practice6();
 		//c.practice7();
-		c.practice8();
+		//c.practice8();
+		//c.practice9();
+		c.practice10();
 	}
 
 }
