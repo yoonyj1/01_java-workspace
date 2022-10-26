@@ -270,13 +270,22 @@ public class A_For {
 		
 		System.out.print("2 ~ 9 사이의 정수 입력 : ");
 		int dan = sc.nextInt();
-		
+		/*
 		if (dan < 2 || dan > 9 ) {
 			System.out.println("2 ~ 9 사이의 숫자를 입력해야합니다.");
 		} else {
 			for (int i = 1; i <= 9; i++) {
 			System.out.println(dan + " X " + i + " = " + dan * i);
+		}
+	}
+		*/
+		
+		if (dan >= 2 && dan <= 9) {
+			for (int i = 1; i <= 9; i++) {
+				System.out.println(dan + " X " + i + " = " + dan * i);
 			}
+		} else {
+			System.out.println("2 ~ 9 사이의 숫자를 입력해야합니다.");
 		}
 		
 		sc.close();
