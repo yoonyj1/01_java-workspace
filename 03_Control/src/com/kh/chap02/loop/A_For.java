@@ -241,9 +241,46 @@ public class A_For {
 		System.out.println("문자열의 길이 : " + str.length());
 		
 		for (int i = 0; i < str.length(); i++) {
-			System.out.print(str.charAt(i) + " ");
+			System.out.println(str.charAt(i));
+		}
+		
+		sc.close();
+	}
+	
+	public void method11() {
+		//구구단 출력
+		//2단 출력하기
+		
+		/*
+		for (int i = 1; i <= 9; i++) {
+			int result = 2 * i;
+			System.out.println("2 x " + i + " = " + result );
+		}
+		*/
+			for (int i = 1; i <= 9; i++) {
+				//System.out.println("2 x " + i + " = " + 2 * 1 );
+				System.out.printf("%d x %d = %d\n", 2, i, 2*i);
+		}
+	}
+	
+	public void method12() {
+		//사용자에게 단수를 입력받아 구구단 출력
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("2 ~ 9 사이의 정수 입력 : ");
+		int dan = sc.nextInt();
+		
+		if (dan < 2 || dan > 9 ) {
+			System.out.println("2 ~ 9 사이의 숫자를 입력해야합니다.");
+		} else {
+			for (int i = 1; i <= 9; i++) {
+			System.out.println(dan + " X " + i + " = " + dan * i);
+			}
 		}
 		
 		sc.close();
 	}
 }
+	
+

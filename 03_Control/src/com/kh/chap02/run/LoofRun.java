@@ -16,7 +16,9 @@ public class LoofRun {
 		//a.method7();
 		//a.method8();
 		//a.method9();
-		a.method10();
+		//a.method10();
+		//a.method11();
+		a.method12();
 	}
 
 }
