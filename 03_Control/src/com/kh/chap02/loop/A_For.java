@@ -163,5 +163,87 @@ public class A_For {
 		}
 		
 		System.out.println("1부터 " + num + "까지의 합 : " + sum);
+		
+		sc.close();
+	}
+	
+	public void method8() {
+		//1에서부터 어떤 랜덤값(1~10 사이의 랜덤값)의 까지에 합계
+		
+		//자바에서 제공하고 있는 클래스(Math)
+		
+		/*
+		 * java.lang.Math 클래스에서 제공하는 random() 메소드를 호출
+		 * 매번 다른 랜덤값을 얻어낼 수 있음
+		 * Math.random(); => 0.0~0.99999... 사이의 랜덤값을 발생
+		 * 					(0.0 <=		< 1.0)
+		 */
+		
+		//int random = Math.random(); //double 형이라 안됨
+		//				0.0 ~ 1.0		0.0 ~ 0.999...
+		//int random = Math.random() * 10;
+		//				0.0 ~ 10.0		0.0 ~ 9.999...
+		//int random = Math.random() * 10 + 1;
+		//				1.0 ~ 11.0		1.0 ~ 10.999...
+		int random = (int)(Math.random() * 10 + 1);
+		//				1 <=	< 11 	1~10
+		System.out.println("1~10 사이의 랜덤값 : " + random);
+		
+		
+		int sum = 0;
+		for (int i = 1; i <= random; i++) {
+			sum += i;
+		}
+		
+		System.out.println("1부터 " + random +  "까지의 합 : " + sum );
+	}
+	
+	public void method9() {
+		String str = "Hello";
+		
+		// 각 인덱스별 문자를 뽑아서 출력
+		/*
+		 * H		=> str.charAt(0);
+		 * e		=> str.charAt(1);
+		 * l		=> str.charAt(2);
+		 * l		=> str.charAt(3);
+		 * o		=> str.charAt(4);
+		 * 
+		 * 0번 인덱스부터 4번 인덱스까지(마지막 인덱스) 1씩 증가하면서 반복 수행
+		 */
+		for (int i = 0; i <= 4 ; i++) {
+			System.out.println(str.charAt(i));
+		}
+	}
+	
+	public void method10() {
+		// 사용자에게 문자열을 입력받아서 (str 변수에 대입)
+		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("문자열 입력 : ");
+		String str = sc.nextLine();
+		
+		//각 인덱스별 문자를 뽑아서 출력
+		//apple의 길이 : 5
+		//01234
+		
+		//strawberry : 10
+		//0123456789
+		
+		//kiwi : 4
+		//0123
+		
+		//마지막 인덱스는 항상 (문자열의 길이 - 1)
+		//추출하고자 하는 인덱스값이 (문자열의 길이 - 1)까지 매번 1씩 증가
+		
+		System.out.println("문자열의 길이 : " + str.length());
+		
+		for (int i = 0; i < str.length(); i++) {
+			System.out.print(str.charAt(i) + " ");
+		}
+		
+		sc.close();
 	}
 }
