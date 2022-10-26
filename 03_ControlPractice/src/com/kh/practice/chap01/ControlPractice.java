@@ -139,7 +139,7 @@ public class ControlPractice {
 		
 		if(idTest.equals(id) && pwdTest.equals(pwd)) {
 			System.out.println("로그인 성공");
-		} else if (idTest != id && pwdTest.equals(pwd)) {
+		} else if (!(idTest.equals(id)) && pwdTest.equals(pwd)) {
 			System.out.println("아이디가 틀렸습니다.");
 		} else {
 			System.out.println("비밀번호가 틀렸습니다.");
@@ -214,21 +214,50 @@ public class ControlPractice {
 		System.out.print("연산자를 입력(+,-,*,/,%) : ");
 		char op = sc.nextLine().charAt(0);
 		
+		/*
 		if(num1 > 0 && num2 > 0) {
 			if (op == '+') {
-				System.out.println(num1 + num2);
+				System.out.printf("%d %c %d = %d\n", num1, op, num2, result);
 			} else if (op == '-') {
-				System.out.println(num1 - num2);
+				System.out.printf("%d %c %d = %d\n", num1, op, num2, result);
 			} else if (op =='*') {
-				System.out.println(num1 * num2);
+				System.out.printf("%d %c %d = %d\n", num1, op, num2, result);
 			} else if (op == '/') {
-				System.out.println((double)((double)num1 / (double)num2));
+				System.out.printf("%d %c %d = %d\n", num1, op, num2, result);
 			} else if (op == '%') {
-				System.out.println(num1 % num2);
+				System.out.printf("%d %c %d = %d\n", num1, op, num2, result);
 			}
 		} else {
 			System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다");
 		}
+		*/
+		
+		int result = 0;
+		if((num1 > 0 ) && (num2 > 0)) {
+		switch (op) {
+		case '+' : result = (num1 + num2);
+		break;
+		
+		case '-' : result = (num1 - num2);
+		break;
+		
+		case '*' : result = (num1 * num2);
+		break;
+		
+		case '/' : result = (num1 / num2);
+		break;
+		
+		case '%' : result = (num1 % num2);
+		break;
+		
+		default : System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+		return;
+		}
+	}else {
+		System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+	}
+		
+		System.out.printf("%d %c %d = %d\n", num1, op, num2, result);
 		
 		sc.close();
 	}
@@ -265,6 +294,7 @@ public class ControlPractice {
 			System.out.println("총점 : " + sum);
 			System.out.println("PASS");
 		} else if (att <= 14) {
+			System.out.println("================= 결과 =================");
 			System.out.println("Fail [출석 회수 부족 " + "(" + att + "/20)]" );
 		} else {
 			System.out.println("================= 결과 =================");
@@ -294,12 +324,12 @@ public class ControlPractice {
 		System.out.println("9. P/F");
 		
 		System.out.print("선택 : ");
-		int num = sc.nextInt();
+		int menu = sc.nextInt();
 		
-		switch (num) {
+		switch (menu) {
 			case 1 :
 				practice1();
-			break;
+				break;
 			case 2 :
 				practice2();
 				break;
@@ -324,10 +354,52 @@ public class ControlPractice {
 			case 9 :
 				practice9();
 				break;
-		}
+			}
 		sc.close();	
+		}
+	
+	public void practice9_1() { //선생님 풀이
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("중간 고사 점수 : ");
+		double test1 = sc.nextInt();
+		
+		System.out.print("기말 고사 점수 : ");
+		double test2 = sc.nextInt();
+		
+		System.out.print("과제 점수 : ");
+		double task = sc.nextInt();
+		
+		System.out.print("출석 회수 : ");
+		double att = sc.nextInt();
+		
+		if (att <= 14) {
+			System.out.println("================= 결과 =================");
+			System.out.println("Fail [출석 회수 부족 " + "(" + (int)att + "/20)]");
+			return;
+		}
+		
+		System.out.println("================= 결과 =================");
+		System.out.println("중간 고사 점수(20) : " + (test1 = test1 *=0.2));
+		System.out.println("기말 고사 점수(30) : " + (test2 = test2 *= 0.3));
+		System.out.println("과제 점수(30) : " + (task = task *= 0.3));
+		System.out.println("출석 점수(20) : " + att);
+
+		double sum = test1 + test2 + att + task;
+		
+		System.out.println("총점 : " + sum);
+		
+		if (att > 14) {
+			if (sum >= 70) {
+				System.out.println("PASS");
+			} else {
+				System.out.println("Fail [점수미달]");
 			}
 		}
+	
+		sc.close();
+	}
+}
 		
 
 	
