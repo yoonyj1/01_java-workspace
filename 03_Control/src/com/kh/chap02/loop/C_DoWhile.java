@@ -57,7 +57,7 @@ public class C_DoWhile {
 			i++;
 		} while (i <= num);
 		
-		System.out.println("1부터 " + num +"까지 합: " + sum);
+		System.out.println("1부터 " + num + "까지 합: " + sum);
 		
 		sc.close();
 	}
