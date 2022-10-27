@@ -18,7 +18,8 @@ public class BranchRun {
 		
 		B_Continue b = new B_Continue();
 		//b.method1(); // for문으로 1부터 10까지 홀수 출력
-		b.method2(); // 1부터 100까지 총 합계. 단, 6의 배수값은 빼고 덧셈연산
+		//b.method2(); // 1부터 100까지 총 합계. 단, 6의 배수값은 빼고 덧셈연산
+		b.method3(); //2~9단 출력, 단 3의 배수인 단 빼고 출력
 	}
 
 }

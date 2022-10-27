@@ -49,4 +49,17 @@ public class B_Continue {
 		System.out.println("1부터 100까지의 합: " + sum);
 	}
 
+	public void method3() {
+		// 2~9단 출력, 단 3의 배수인 단 빼고 출력
+
+		for (int dan = 2; dan <= 9; dan++) {
+			if (dan % 3 == 0) {
+				continue;
+			}
+			System.out.println("======= " + dan + "단 =======");
+			for (int i = 1; i <= 9; i++) {
+				System.out.printf("%d X %d = %d\n", dan, i, (dan * i));
+			}
+		}
+	}
 }
