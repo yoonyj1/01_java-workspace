@@ -2,6 +2,7 @@ package com.kh.chap02.run;
 
 import com.kh.chap02.loop.A_For;
 import com.kh.chap02.loop.B_While;
+import com.kh.chap02.loop.C_DoWhile;
 
 public class LoopRun {
 
@@ -30,7 +31,14 @@ public class LoopRun {
 		B_While b = new B_While();
 		//b.method1(); //안녕하세요 5번 출력
 		//b.method2(); // 1 2 3 4 5
-		b.method3(); //1에서부터 10까지 출력 , 1 3 5 7 9 
+		//b.method3(); //1에서부터 10까지 출력 , 1 3 5 7 9
+		//b.method4(); //1부터 랜덤값(1~100)까지의 합계
+		//b.method5(); // a.method10 while문으로 바꾸기
+		
+		C_DoWhile c = new C_DoWhile();
+		//c.method1();
+		//c.method2(); // 1 2 3 4 5
+		c.method3(); //1부터 사용자가 입력한 수까지의 총 합계
 	}
 
 }

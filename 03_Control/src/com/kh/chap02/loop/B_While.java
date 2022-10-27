@@ -1,5 +1,7 @@
 package com.kh.chap02.loop;
 
+import java.util.Scanner;
+
 public class B_While {
 
 	/*
@@ -70,7 +72,39 @@ public class B_While {
 				System.out.print(i + " ");
 			}
 				i++;
-			}
-		}			
+		}
+	}			
+
+	public void method4() {
+		//1부터 랜덤값(1~100)까지의 합계
+		
+		int random = (int)(Math.random() * 100 + 1);
+		
+		int i = 1;
+		int sum = 0;
+		while(i <= random) {
+			sum += i; // 누적합 공식
+			i++;
+		}
+		
+		System.out.println("1부터 " + random + "까지의 합 : " + sum);
+	}
+
+	public void method5() {
+		// 사용자에게 문자열을 입력받아서 (str 변수에 대입)
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("문자열 입력 : ");
+		String str = sc.nextLine();
+		
+		int i = 0;
+		while(i < str.length()) {
+			System.out.println(str.charAt(i));
+			i++;
+		}
+		sc.close();
+	}
 }
+
 
