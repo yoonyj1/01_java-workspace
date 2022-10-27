@@ -49,23 +49,23 @@ public class A_For {
 		System.out.println("안녕하세요");
 		*/
 		
-		for (int i = 1; i <= 20; i++) {//i값이 1에서부터 5까지 매번 1씩 증가하는 동안 반복 (1,2,3,4,5 -> 5회 수행)
+		for (int i = 1; i <= 20; i++) {// i값이 1에서부터 5까지 매번 1씩 증가하는 동안 반복 (1,2,3,4,5 -> 5회 수행)
 			System.out.println(i + ". " + "안녕하세요");
 		}
-		
-		for (int i = 0; i <= 4; i++) {//i값이 0에서부터 4까지 매번 1씩 증가하는 동안 반복수행(0,1,2,3,4 -> 5회 수행)
+
+		for (int i = 0; i <= 4; i++) {// i값이 0에서부터 4까지 매번 1씩 증가하는 동안 반복수행(0,1,2,3,4 -> 5회 수행)
 			System.out.println("반갑습니다.");
 		}
 
-		for (int i = 11; i <= 15 ; i++) {//i값이 11에서부터 15까지 매번 1씩 증가하는 동안 반복 수행 (11,12,13,14,15 -> 5회 수행)
+		for (int i = 11; i <= 15; i++) {// i값이 11에서부터 15까지 매번 1씩 증가하는 동안 반복 수행 (11,12,13,14,15 -> 5회 수행)
 			System.out.println("저리가세요");
 		}
-		
+
 		for (int i = 1; i <= 9; i += 2) {
-			System.out.println("Hello"); //i 값이 1에서부터 9까지 매번 2 증가하는 동안 반복 수행(1,3,5,7,9)
+			System.out.println("Hello"); // i 값이 1에서부터 9까지 매번 2 증가하는 동안 반복 수행(1,3,5,7,9)
 		}
-		
-		//System.out.println(i);
+
+		// System.out.println(i);
 	}
 	
 	public void method2() {
@@ -86,11 +86,11 @@ public class A_For {
 			System.out.print(i + " ");
 		}
 	}
-	
+
 	public void method3() {
-		//5 4 3 2 1
-		
-		for(int i = 5; i >= 1; i--) {
+		// 5 4 3 2 1
+
+		for (int i = 5; i >= 1; i--) {
 			System.out.print(i + " ");
 		}
 	}
@@ -103,16 +103,16 @@ public class A_For {
 		}
 		*/
 		
-		for(int i = 1; i <= 10 ; i++) {//i값이 1에서부터 10까지 매번 1씩 증가되는동안 반복 수행(10회)
-			if(i % 2 == 1) {
+		for (int i = 1; i <= 10; i++) {// i값이 1에서부터 10까지 매번 1씩 증가되는동안 반복 수행(10회)
+			if (i % 2 == 1) {
 				System.out.print(i + " ");
 			}
 		}
 	}
-	
+
 	public void method5() {
 		// 1 2 3 4 5 6 7 8 9 10 for문 고정
-		
+
 		for (int i = 0; i <= 9; i++) {
 			System.out.print((i + 1) + " ");
 		}
@@ -134,14 +134,14 @@ public class A_For {
 		//더하고자 하는 값이 1에서부터 10까지 1씩 증가하는 것을 파악
 		
 		int sum = 0;
-		
+
 		for (int i = 1; i <= 10; i++) {
 			sum += i;
 		}
-		
+
 		System.out.println("1부터 10까지의 합 : " + sum); // 반복문 밖에다가 작성해야함.
 	}
-	
+
 	public void method7() {
 		//사용자에게 값을 입력받아 1부터 입력받은 수까지의 합계 출력
 		
