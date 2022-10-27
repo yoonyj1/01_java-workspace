@@ -64,6 +64,8 @@ public class A_For {
 		for (int i = 1; i <= 9; i += 2) {
 			System.out.println("Hello"); //i 값이 1에서부터 9까지 매번 2 증가하는 동안 반복 수행(1,3,5,7,9)
 		}
+		
+		//System.out.println(i);
 	}
 	
 	public void method2() {
@@ -290,6 +292,104 @@ public class A_For {
 		
 		sc.close();
 	}
-}
 	
-
+	public void method13() {
+		// 2부터 9까지의 랜덤값 발생시켜서 랜덤단 출력시키기
+		
+		int dan = (int)(Math.random() * 8 + 2); //2가 시작수, 시작수로부터 몇개를 발생시킬지
+		//				0.0 <=		< 1.0
+		//	* 8			0.0 <=		< 8.0
+		//	+ 2			2.0 <=		< 10.0
+		//	int			2 <=		< 10
+		//시작수가 맨뒤에 더해져야하고, 발생시킬 개수 곱하기
+		
+		System.out.println("===== " + dan + "단 =====");
+		for (int i = 1; i <= 9; i++) {
+			System.out.printf("%d X %d = %d\n", dan, i, (dan*i));
+		}
+	}
+	
+	public void method14() {
+		//중첩 for문
+		// 1 2 3 4 5
+		// 1 2 3 4 5
+		// 1 2 3 4 5
+		for(int j = 1; j <= 3 ; j++) {
+			for (int i = 1; i <= 5; i++) {
+				System.out.print(i + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+	public void method15() {
+		// ****
+		/*
+		for(int i = 1; i <= 4; i++) {
+			System.out.print("*");
+		}
+		*/
+		
+		//****
+		//****
+		//****
+		//****
+		
+		for(int i = 1; i <= 4; i++) {
+			for(int j = 1; j <= 4; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		
+	}
+	
+	public void method16() {
+		//1***
+		//*2**
+		//**3*
+		//***4
+		
+		//행 1~4까지 반복 => 바깥쪽 for 문
+		//매 행 고정일 때 열은 1~4까지 반복 => 안쪽 for 문 
+		
+		for(int i = 1; i <= 4; i++) {
+			for(int j = 1; j <= 4; j++) {
+				if(i == j) {
+					System.out.print(i);
+				} else {
+				System.out.print("*");
+				}
+			}
+			System.out.println();
+		}
+	}
+	
+	public void method17() {
+		//2단부터 9단까지 다 출력
+		
+		/*
+		int dan = 3;
+		System.out.println("=====3단=====");
+		for(int i = 1; i <= 9; i++) {
+			System.out.printf("%d X %d = %d\n", dan, i, (dan*i));
+		}
+		*/
+				
+		
+		for(int dan = 2; dan <= 9; dan++) {
+			System.out.println("======" + dan + "단======" );
+			for(int i = 1; i <= 9; i++) {
+				System.out.printf("%d X %d = %d\n", dan, i, (dan * i));
+			}
+			System.out.println();
+		}
+		
+	}
+	
+	public void method18() {
+		for(; ;) {//조건식 자리 생략시 기본적으로 true => 무한반복문
+			System.out.println("ㅎㅇ");
+		}
+	}
+}
