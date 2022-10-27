@@ -56,11 +56,21 @@ public class B_While {
 		*/
 		
 		// 1 3 5 7 9
+		/*
 		int i = 1;
 		while(i <= 10) {
 			System.out.print(i + " ");
 			i += 2;
 		}
-				
-	}
+		*/
+		
+		int i = 1;
+		while (i <= 10) {
+			if (i % 2 == 1 ) {
+				System.out.print(i + " ");
+			}
+				i++;
+			}
+		}			
 }
+
