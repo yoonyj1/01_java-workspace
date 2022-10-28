@@ -10,7 +10,12 @@ public class ArrayRun {
 		//a.method1();
 		//a.method2();
 		//a.method3();
-		a.method4(); //for 문으로 값 대입 & 출력
+		//a.method4(); //for 문으로 값 대입 & 출력
+		//a.method5(); // 배열에서 볼 수 있는 오류 - 선언만 한 경우
+		//a.method6(); // 배열에서 볼 수 있는 오류 - 인덱스 값을 넘겨서 값을 넣은 경우
+		//a.method7(); // 배열 선언, 할당, 초기화를 동시에 하기
+		//a.method8();
+		a.method9(); // 사용자에게 배열의 길이를 입력받아 해당 크기만큼의 문자열 배열 생성
 	}
 
 }

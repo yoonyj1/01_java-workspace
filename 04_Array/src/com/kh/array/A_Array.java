@@ -1,5 +1,7 @@
 package com.kh.array;
 
+import java.util.Scanner;
+
 public class A_Array {
 
 	//변수 : 하나의 공간에 하나의 값을 담을 수 있음
@@ -133,7 +135,7 @@ public class A_Array {
 	}
 	
 	public void method4() {
-		int[] arr = new int[5];
+		int[] arr = new int[10];
 		
 		/* 
 		 * arr[0] = 1;
@@ -154,6 +156,133 @@ public class A_Array {
 
 		System.out.println(arr); // 배열의 자료형 + @ + 주소값 16진수
 		System.out.println(arr.hashCode()); // 주소값의 10진수 출력
-		System.out.println("배열의 길이: " + arr.length); // 배열의 길이
+		System.out.println("배열의 길이: " + arr.length); // 배열의 길이 -> 배열 크기 변경 요청
+	}
+	
+	public void method5() {
+		int result = 0; // arr 초기화 값
+		
+		// 배열에서 볼 수 있는 오류 - 선언만 한 경우 
+		//int[] arr; //크기 지정 (할당)을 하지 않은 경우  1
+		
+		int[] arr = null; // 아무것도 참조하고 있지 않음  2 
+		
+		//System.out.println(arr); // 1 - 초기화가 안돼있어서 오류발생, 2 - null 출력
+		
+		//null 가지고 메소드를 호출한다거나 특정 어딘가에 접근하고자 한다면 항상 오류발생
+		//System.out.println(arr.hashCode()); //오류발생
+		//System.out.println(arr.length ); //오류발생
+		//System.out.println(arr[0]);//오류발생
+		//NullPointerException 발생
+	}
+	
+	public void method6() {
+		int[] arr = new int[5];
+		
+		/*
+		 * arr[0] = 2;
+		 * arr[1] = 4;
+		 * arr[2] = 6;
+		 * arr[3] = 8;
+		 * arr[4] = 10;
+		 */
+		
+		/*
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = 2 * (i + 1);
+		}
+		 */
+		
+		int value = 2;
+		for(int  i = 0; i < arr.length; i++) {
+			arr[i] = value;
+			value += 2;
+		}
+		
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println(arr[i]);
+		}
+		
+		System.out.println("arr의 해쉬코드 값: " + arr.hashCode());
+		System.out.println("arr의 길이: " + arr.length);
+		
+		/*
+		//ArrayIndexOutOfBoundsException: 배열에 부적절한 인덱스 제시 시 발생(범위에서 벗어난 인덱스를 제시) 
+		arr[5] = 12;
+		//arr[6] = 14; //ArrayIndexOutOfBoundsException 발생
+		 */
+		
+		// 배열의 가장 큰 단점 
+		//	- 한 번 지정된 배열의 '크기'는 변경이 불가
+		//	=> 배열의 크기를 변경하고자 하면 다시 만들어야함.
+		arr = new int[7];
+		System.out.println("변경 후 arr의 해쉬코드 값: " + arr.hashCode());
+		System.out.println("변경 후 arr의 길이: "+ arr.length);
+		//주소값이 변경 됨 => 새로운 곳이 참조가 됨.
+		
+		/*
+		 * 연결이 끊겨진 기존 배열은 Heap 영역에 떠다님(어디에도 참조되어 있지 않으므로 필요없는 존재 = 지워주는게 좋다.)
+		 * => 일정 시간이 지나면 "가비지 컬렉터(GC)"가 알아서 지워줌
+		 * => 자바에서의 "자동 메모리 관리" 특징 -> 개발자가 코드작성에만 신경쓸 수 있음
+		 */
+		
+		// 배열을 강제로 삭제시키고자 한다면 -> 연결고리를 끊으면 된다.
+		arr = null; //배열명 = null; -> stack에 있는 arr 값은 null로 바뀜
+		
+		System.out.println(arr);
+		
+		//arr.length => NullPointerException 발생
+	}
+	
+	public void method7() {
+		// 배열 선언, 할당, 초기화를 동시에 하기
+		
+		//[표현법1]
+		int[] arr1 = new int[] {1, 2, 3, 4};
+		
+		//[표현법2]
+		int[] arr2 = {1, 2, 3, 4};
+		
+		System.out.println(arr1 == arr2); //false => 각각의 변수에 담겨있는 주소값을 비교하기 때문
+	}
+	
+	public void method8() {
+		//1. 크기 10짜리 정수 배열 생성 => arr
+		int[] arr = new int[10];
+		
+		//2. 반복문 활용해서 0번 인덱스부터 마지막 인덱스까지 순차적으로 접근하면서 값을 대입
+		//		매번 1~100 사이에 발생되는 랜덤값
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int)(Math.random() * 100 + 1);
+		}
+		
+		//3. 반복문을 활용해서 0번 인덱스부터 마지막 인덱스까지 담겨있는 값 출력
+		
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println("arr[" + i + "] : " + arr[i]);
+		}
+	}
+	
+	public void method9() {
+		// 사용자에게 배열의 길이를 입력받아 해당 크기만큼의 문자열 배열 생성
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("배열의 길이: ");
+		int size = sc.nextInt();
+
+		sc.nextLine();
+
+		String[] arr = new String[size];
+
+		// 2. 반복문 활용해서 매번 사용자에게 과일명 입력 받아 그 값을 매 인덱스 자리에 대입
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print("좋아하는 과일 입력 : ");
+			arr[i] = sc.nextLine();
+		}
+
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println("arr[" + i + "] : " + arr[i]);
+		}
+		sc.close();
 	}
 }
