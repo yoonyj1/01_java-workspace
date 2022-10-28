@@ -285,4 +285,67 @@ public class A_Array {
 		}
 		sc.close();
 	}
+	
+	public void method10() {
+		// 사용자에게 문자열을 입력받아 각각의 인덱스에 있는 문자들을 char 배열에 옮겨닮기
+
+		// 1. 사용자에게 문자열 입력받기
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("문자열 입력: ");
+		String str = sc.nextLine();
+		
+		System.out.print("찾고자 하는 문자 : ");
+		char ch = sc.nextLine().charAt(0);
+
+		// 2. char형 배열 생성 (배열의 크기 == 문자열의 크기)
+		char[] arr = new char[str.length()];
+
+		// 3. 반복문 활용해서 해당 문자열에서 각 인덱스별 문자를 char 배열에 값 대입
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = str.charAt(i);
+		}
+
+		// 4. 반복문 활용해서 해당배열의 0~마지막 인덱스 값 출력
+		
+		int count = 0;
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println("arr[" + i + "] : " + arr[i]);
+			
+			if (arr[i] == ch) {
+				count++;
+			}
+		}
+		System.out.println("찾아진 문자 개수 : " + count);
+		
+		sc.close();
+	}
+	
+	public void method11() {
+		// 1. 사용자에게 배열의 길이를 입력 받은 후 해당 크기만큼의 정수 배열 생성
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("배열의 길이: ");
+		int size = sc.nextInt();
+
+		int[] arr = new int[size];
+
+		// 2. 반복문 활용해서 0~마지막 인덱스까지 매번 1~100사이의 랜덤값 발생시켜 대입
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int) (Math.random() * 100 + 1);
+		}
+
+		// 3. 반복문 활용해서 출력 + 해당 그 인덱스에 담긴 값이 짝수인 값들의 총합 출력
+		int sum = 0;
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println("arr[" + i + "] : " + arr[i]);
+
+			if (arr[i] % 2 == 0) {
+				sum += arr[i];
+			}
+		}
+		System.out.println("짝수 값들의 합: " + sum);
+
+		sc.close();
+	}
 }
