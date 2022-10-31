@@ -18,7 +18,7 @@ public class B_InDecrease {
 		
 		//전위연산 테스트
 		int num1 = 10;
-		System.out.println("전위연산 적용 전 num1의 값 : " + num1); //num1 = 10
+		System.out.println("전위연산 적용 전 num1의 값: " + num1); //num1 = 10
 		System.out.println("1회 수행 후 결과 : " + ++num1); //num1 = 11
 		System.out.println("2회 수행 후 결과 : " + ++num1); //num1 = 12
 		System.out.println("3회 수행 후 결과 : " + ++num1); //num1 = 13

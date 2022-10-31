@@ -6,7 +6,7 @@ public class A_Variable {
 	public void printVariable() {
 		System.out.println("===== 변수 사용 전 =====");
 		
-		System.out.println("시급 : 9450원");
+		System.out.println("시급: 9450원");
 		System.out.println("근무시간 : 6시간");
 		System.out.println("근무일수 : 8일");
 		
