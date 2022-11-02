@@ -27,6 +27,7 @@ public class UpAndDown {
 					count++;
 				} else {
 					System.out.println("정답입니다!!");
+					count++;
 					break;
 				}
 			}

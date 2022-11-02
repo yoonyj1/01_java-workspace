@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class RockPaperScissors {
 
 	public void rps() {
-		// 사용자한테 가위바위보 받기
 		Scanner sc = new Scanner(System.in);
 		System.out.print("당신의 이름을 입력하세요 : ");
 		String name = sc.nextLine();
@@ -18,7 +17,6 @@ public class RockPaperScissors {
 		int loseCount = 0;
 
 		while (true) {
-			// 프로그램 돌아가는 동안 컴퓨터에게 가위바위보 랜덤배정
 			int random = (int) (Math.random() * 3 + 1);
 			switch (random) {
 			case 1:
@@ -41,39 +39,55 @@ public class RockPaperScissors {
 				System.out.println("컴퓨터 : " + cResult);
 				System.out.println(name + " : " + result);
 				System.out.println("비겼습니다.");
+				count++;
 				drawCount++;
-			} else {// 비기지 않은 경우
-				System.out.println("컴퓨터 : " + cResult);
-				System.out.println(name + " : " + result);
-			}
-
+			} 
+			
 			switch (result) {
 			case "가위":
 				if (cResult.equals("바위")) {
+					System.out.println("컴퓨터 : " + cResult);
+					System.out.println(name + " : " + result);
 					System.out.println("졌습니다 ㅠㅠ");
+					count++;
 					loseCount++;
 				} else if (cResult.equals("보")) {
+					System.out.println("컴퓨터 : " + cResult);
+					System.out.println(name + " : " + result);
 					System.out.println("이겼습니다!");
+					count++;
 					winCount++;
 				}
 				break;
 
 			case "바위":
 				if (cResult.equals("보")) {
+					System.out.println("컴퓨터 : " + cResult);
+					System.out.println(name + " : " + result);
 					System.out.println("졌습니다 ㅠㅠ");
+					count++;
 					loseCount++;
 				} else if (cResult.equals("가위")) {
+					System.out.println("컴퓨터 : " + cResult);
+					System.out.println(name + " : " + result);
 					System.out.println("이겼습니다!");
+					count++;
 					winCount++;
 				}
 				break;
 
 			case "보":
 				if (cResult.equals("가위")) {
+					System.out.println("컴퓨터 : " + cResult);
+					System.out.println(name + " : " + result);
 					System.out.println("졌습니다 ㅠㅠ");
+					count++;
 					loseCount++;
 				} else if (cResult.equals("바위")) {
+					System.out.println("컴퓨터 : " + cResult);
+					System.out.println(name + " : " + result);
 					System.out.println("이겼습니다!");
+					count++;
 					winCount++;
 				}
 				break;
