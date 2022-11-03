@@ -9,7 +9,7 @@ public class B_KeyboardInput {
 		
 		/*
 		 * 키보드로 값을 입력하는 방법
-		 * Scanner를 사용한다!
+		 * Scanner를 사용한다! 
 		 * 즉 java.util.Scanner 클래스를 이용하는 것이다!
 		 * Scanner 클래스 내부의 메소드를 호출하여 입력 받는 것.
 		 */
