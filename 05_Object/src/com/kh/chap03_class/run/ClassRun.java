@@ -1,6 +1,7 @@
 package com.kh.chap03_class.run;
 
 import com.kh.chap03_class.model.vo.Person;
+import com.kh.chap03_class.model.vo.Product;
 
 public class ClassRun {
 
@@ -33,6 +34,50 @@ public class ClassRun {
 		System.out.println("성별: " + y.getGender());
 		System.out.println("전화번호: " + y.getPhone());
 		System.out.println("이메일: " + y.getEmail());
+		
+		System.out.println("======= 메소드 만들고 난 후 ========");
+		System.out.println(y.information());
+		
+		System.out.println();
+		System.out.println("=========================================");
+		System.out.println();
+		
+		
+		
+		Product p1 = new Product();
+		
+		p1.setpName("갤럭시");
+		p1.setPrice(1_200_000);
+		p1.setBrand("삼성");
+
+		Product p2 = new Product();
+		
+		p2.setpName("아이폰");
+		p2.setPrice(1_300_000);
+		p2.setBrand("애플");
+		
+		// pName : xxx, price : xxx, brand : xxxx
+		/*
+		System.out.printf("pName: %s, price: %d, brand: %s\n", p1.getpName(), p1.getPrice(), p1.getBrand());
+		System.out.printf("pName: %s, price: %d, brand: %s\n", p2.getpName(), p2.getPrice(), p2.getBrand());
+		*/
+		
+		System.out.println("pName: " + p1.getpName() + ", price: " + p1.getPrice() + ", brand: " + p1.getBrand());
+		System.out.println("pName: " + p2.getpName() + ", price: " + p2.getPrice() + ", brand: " + p2.getBrand());
+		
+		System.out.println("======= 메소드 만들고 난 후 ========");
+		System.out.println(p1.information());
+		System.out.println(p2.information());
+		
+		System.out.println("==========과제=========");
+		Person p3 = new Person();
+		System.out.println(p3.information());
+		
+		Person p4 = new Person("ㄱㄴㄷ", "1q2w3e34", 22, "010-1234-5678");
+		System.out.println(p4.information());
+		
+		Person p5 = new Person("id1", "pwd1", "nam", 23, 'M', "010-5678-1234", "yyyy@naver,com");
+		System.out.println(p5.information());
 	}
 
 }

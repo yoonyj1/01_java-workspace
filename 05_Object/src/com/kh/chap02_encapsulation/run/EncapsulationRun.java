@@ -48,6 +48,18 @@ public class EncapsulationRun {
 		woo.setAge(25);
 		System.out.println("===== 수정 후 =====");
 		System.out.println(woo.getAge());
+		
+		System.out.println("==========과제=========");
+		Student s1 = new Student();
+		System.out.println(s1.information());
+		
+		Student s2 = new Student("ㄱㄴㄷ", 180.0, 100);
+		System.out.println(s2.information());
+		
+		Student s3 = new Student("ㄴㄷㄹ", 22, 170.0, 100, 100);
+		System.out.println(s3.information());
 	}
+	
+	
 
 }
