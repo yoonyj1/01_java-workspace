@@ -23,10 +23,8 @@ public class Student { // 나만의 자료형
 	}
 	
 	public Student(String name, int age, double height, int korScore, int mathScore) {
-		this.name = name;
+		this(name, height, korScore);
 		this.age = age;
-		this.height = height;
-		this.korScore = korScore;
 		this.mathScore = mathScore;
 	}
 	

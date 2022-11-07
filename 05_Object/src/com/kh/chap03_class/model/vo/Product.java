@@ -30,6 +30,15 @@ public class Product {
 	 *  }
 	 */
 
+	public Product() {} // 기본생성자는 한줄로 표현
+	
+	// 매개변수 생성자 => 전체
+	public Product(String pName, int price, String brand) {
+		this.pName = pName;
+		this.price = price;
+		this.brand = brand;
+	}
+	
 	/*
 	 * 메소드부
 	 *  - 기능을 처리하는 담당

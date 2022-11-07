@@ -43,18 +43,28 @@ public class ClassRun {
 		System.out.println();
 		
 		
-		
+		// 첫번째 방법: 기본생성자로 생성 후 setter 메소드 이용해서 값 초기화
+		/*
 		Product p1 = new Product();
 		
 		p1.setpName("갤럭시");
 		p1.setPrice(1_200_000);
 		p1.setBrand("삼성");
-
+		*/
+		
+		// 두번째 방법: 매개변수 생성자로 생성과 동시에 값 초기화
+		Product p1 = new Product("갤럭시", 1200000, "삼성");
+		p1.setPrice(1000000);
+		
+		/*
 		Product p2 = new Product();
 		
 		p2.setpName("아이폰");
 		p2.setPrice(1_300_000);
 		p2.setBrand("애플");
+		*/
+		
+		Product p2 = new Product("아이폰", 1300000, "애플");
 		
 		// pName : xxx, price : xxx, brand : xxxx
 		/*

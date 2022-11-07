@@ -39,9 +39,19 @@ public class User { // 클래스 영역 시작
 	}
 	
 	public User(String userId, String userPwd, String userName, int age, char gender) {
+		/*
 		this.userId = userId;
 		this.userPwd = userPwd;
 		this.userName = userName;
+		*/
+		this(userId, userPwd, userName); // 위에 있는 생성자와 겹치는 부분을 간단하게 표현하는 방법
+										 // this 생성자 -> 코드 간결하게 쓸 수 있음.
+		/*
+		 * 중복되는 초기화 하는 내용의 생성자가 이미 존재할 경우
+		 * this()생성자 활용 가능
+		 * => 같은 클래스 내의 생성자에서 또 다른 생성자 호출하고자 할 때 사용됨.
+		 * ** 유의사항: 반드시 첫 줄에 작성해야함. 위치가 맨 아래 있을 시 에러발생
+		 */
 		this.age = age;
 		this.gender = gender;
 	}
