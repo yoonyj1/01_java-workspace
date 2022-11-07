@@ -46,8 +46,13 @@ public class NonStaticMethod {// 클래스 시작
 	// 문자열과 정수값을 전달 받아서 해당 문자열의 해당 정수 인덱스의 문자값을 뽑아서 전환
 	public char method4(String str, int index) { // method4 시작
 		System.out.println("4. 매개변수와 반환값 둘 다 있는 메소드");
-		return str.charAt(index);
-	} // method4 끝
+		
+		if (index >= 0 && index < str.length()) {
+			return str.charAt(index);
+		} else {
+			return ' ';
+		}
+ 	} // method4 끝
 	
 	
 } // 클래스 끝
