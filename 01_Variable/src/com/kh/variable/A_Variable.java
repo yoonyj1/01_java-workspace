@@ -11,7 +11,7 @@ public class A_Variable {
 		System.out.println("근무일수 : 8일");
 		
 		// 월급 = 시급 x 근무시간 x 근무일수
-		// 김갑생 : 0000원 형식으로 출력하고 싶다.
+		// 김갑생 : 0000원 형식으로 출력하고 싶다. 
 		
 		System.out.println("김갑생 : " + (9450 * 6 * 8) + "원");
 		System.out.println("권다현 : " + (9450 * 6 * 8) + "원");

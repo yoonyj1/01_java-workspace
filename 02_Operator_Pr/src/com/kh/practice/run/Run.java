@@ -8,7 +8,7 @@ public class Run {
 
 		OperatorPractice op =new OperatorPractice();
 		
-		//op.practice1();
+		//op.practice1(); 
 		//op.practice2();
 		//op.practice3();
 		//op.practice4();
