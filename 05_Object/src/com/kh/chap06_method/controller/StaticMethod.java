@@ -16,7 +16,7 @@ public class StaticMethod {
 		System.out.println("random: " + random);
 
 		int sum = 0;
-
+		
 		for (int i = 1; i <= random; i++) {
 			sum += i;
 		}

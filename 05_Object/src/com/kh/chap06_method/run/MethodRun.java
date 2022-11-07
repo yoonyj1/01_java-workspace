@@ -3,6 +3,7 @@ package com.kh.chap06_method.run;
 import java.util.Scanner;
 
 import com.kh.chap06_method.controller.NonStaticMethod;
+import com.kh.chap06_method.controller.OverloadingTest;
 import com.kh.chap06_method.controller.StaticMethod;
 
 public class MethodRun { // 클래스 시작
@@ -52,11 +53,19 @@ public class MethodRun { // 클래스 시작
 		 */
 
 		// ------ StaticMethod ------
-		StaticMethod.method1(); // 생성 없이 호출 가능
+		//StaticMethod.method1(); // 생성 없이 호출 가능
 		// StaticMethod.method2();
-		System.out.println(StaticMethod.method2()); // return값은 출력하지 않으면 보이지 않는다.
-		StaticMethod.method3("ㄱㄴㄷ");
-		System.out.println(StaticMethod.method4("apple", "appl"));
+		//System.out.println(StaticMethod.method2()); // return값은 출력하지 않으면 보이지 않는다.
+		//StaticMethod.method3("ㄱㄴㄷ");
+		//System.out.println(StaticMethod.method4("apple", "appl"));
+		
+		// ------- OverloadingTest -------
+		OverloadingTest ot = new OverloadingTest();
+		ot.test();
+		ot.test(10);
+		ot.test(10, "ㄱㄴㄷ");
+		ot.test("ㄱㄴㄱ", 10);
+		ot.test("ㄴㄷㄹ");
 	} 
 
 } // 클래스 끝
