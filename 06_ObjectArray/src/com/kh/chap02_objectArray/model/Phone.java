@@ -51,8 +51,10 @@ public class Phone {
 	public void setSeries(String series) {
 		this.series = series;
 	}
-	
+
+	// 모든 필드 한 문자열로 합친 후 반환시켜주는 information 메소드
 	public String information() {
 		return name + " " + brand + " " + price + " " + series;
 	}
+	
 }
