@@ -24,12 +24,9 @@ public class Person {
 	}
 	
 	public Person(String id, String pwd, String name, int age, char gender, String phone, String email) {
+		this(name, pwd, age, phone);
 		this.id = id;
-		this.pwd = pwd;
-		this.name = name;
-		this.age = age;
 		this.gender = gender;
-		this.phone = phone;
 		this.email = email;
 	}
 	
