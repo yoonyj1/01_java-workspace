@@ -8,9 +8,10 @@ public class Tv { // 클래스 시작
 	private String pName; // 상품명
 	private int price; // 상품 가격
 	private int inch; // 인치
+
 	// 생성자부
 	public Tv() {}
-	
+
 	public Tv(String brand, String pCode, String pName, int price, int inch) {
 		this.brand = brand;
 		this.pCode = pCode;
@@ -61,6 +62,6 @@ public class Tv { // 클래스 시작
 	}
 
 	public String information() {
-		return brand + " " + pCode + " " + pName + " " + price + " " + inch;
+		return brand + ", " + pCode + ", " + pName + ", " + price + ", " + inch;
 	}
-} // 클래스 시작
+} // 클래스 끝
