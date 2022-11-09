@@ -56,6 +56,7 @@ public class Product {
 
 	// information
 	public String information() {
-		return brand + ", " + pCode + ", " + pName + ", " + price; 
+	      return "brand : " + brand + ", pCode : " + pCode + ", pName : " + pName + ", price : " + price; 
 	}
+	
 }

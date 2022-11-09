@@ -26,7 +26,23 @@ public class Desktop extends Product { // 클래스 시작
 		// super.setpName(pName); // this.pName = pName;
 		// super.setPrice(price); // this.price = price;
 		
+		// 해결방법 3. 부모생성자 호출하기 
+		super(brand, pCode, pName, price);
 		this.allInOne = allInOne;
+	}
+
+	// 메소드부
+	public boolean isAllInOne() {
+		return allInOne;
+	}
+
+	public void setAllInOne(boolean allInOne) {
+		this.allInOne = allInOne;
+	}
+	
+	// 오버라이딩 : 부모클래스에 있는 메소드를 자식 클래스에서 재정의 하는 것
+	public String information() {
+		return super.information() + ", allInOne : " + allInOne;
 	}
 	
 } // 클래스 끝
