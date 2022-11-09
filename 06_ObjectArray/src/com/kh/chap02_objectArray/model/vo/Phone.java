@@ -1,4 +1,4 @@
-package com.kh.chap02_objectArray.model;
+package com.kh.chap02_objectArray.model.vo;
 
 public class Phone {
 	// 필드부

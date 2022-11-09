@@ -39,7 +39,7 @@ public class Run {
 		emp[1].setSalary(4_000_000);
 		emp[1].setBonusPoint(0.3);
 
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < emp.length - 1; i++) {
 			System.out.println("emp[" + i + "] : " + emp[i].information());
 		}
 		System.out.println("=======================================================");
