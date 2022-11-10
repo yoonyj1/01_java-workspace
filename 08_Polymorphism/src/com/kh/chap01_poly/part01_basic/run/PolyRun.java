@@ -1,8 +1,6 @@
-package com.kh.chap01_poly.run;
+package com.kh.chap01_poly.part01_basic.run;
 
-import com.kh.chap01_poly.model.vo.Child1;
-import com.kh.chap01_poly.model.vo.Child2;
-import com.kh.chap01_poly.model.vo.Parent;
+import com.kh.chap01_poly.part01_basic.model.vo.*;;
 
 public class PolyRun { // 클래스 시작
 
