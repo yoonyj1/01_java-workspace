@@ -31,4 +31,11 @@ public class Car extends Vehicle { // 클래스 시작
 	public void howToMove() { // 이름을 다르게 생성하면 오류발생
 		System.out.println("바퀴를 굴려 움직인다.");
 	}
+
+	@Override
+	public String toString() {
+		return "Car [tire=" + tire + "]";
+	}
+	
+	
 } // 클래스 끝
