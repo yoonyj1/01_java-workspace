@@ -75,6 +75,49 @@ public class PolyRun { // 클래스 시작
 		arr[3] = new Child1(2, 3, 5); // 객체4
 		// 하나의 부모타입만으로 여러 자식 객체를 받을 수 있음(편리, 코드길이 감소)
 		
+		System.out.println("========================================");
+		
+		arr[0].printParent();
+		// arr[0].printChild1();
+		((Child1)arr[0]).printChild1();
+		((Child2)arr[1]).printChild2();
+		// ((Child1)arr[2]).printChild1(); // ClassCastException: 부적절한 형변환
+		((Child2)arr[2]).printChild2();
+		((Child1)arr[3]).printChild1();
+		
+		System.out.println("==============반복문 이용해서 출력==================");
+		
+		for (int i = 0; i < arr.length; i++) { // for문 시작
+
+			/*
+			 * instanceof 연산자 => 연산결과 true, false로 반환
+			 * 현재 레퍼런스가 실질적으로 어떤 클래스 타입을 참조하는지 확인할 때 사용
+			 */
+			
+			/*if(i == 0 || i == 3) {*/
+			if(arr[i] instanceof Child1) {
+				((Child1)arr[i]).printChild1();
+			} else {
+				((Child2)arr[i]).printChild2();
+			}
+		} // for문 끝
+		
+		System.out.println("========================================");
+		
+	//	Parent	 (Parent)Child1
+		Parent pp = new Child1();
+		pp.print();
+		
+		/*
+		 * 동적바인딩: 프로그램이 실행되기 전에는 컴파일 되면서 정적바인딩(레퍼런스 타입의 메소드를 가리킴)
+		 * 			단, 실질적으로 참조하는 자식클래스에 해당메소드가 오버라이딩이 돼있다면
+		 * 			   프로그램 실행 시 동적으로 자식클래스에 오버라이딩 된 메소드를 찾아서 실행함
+		 */
+		
+		for (int i = 0; i < arr.length; i++) {
+			arr[i].print();
+		}
+		
 	} // main 끝
 
 } // 클래스 끝

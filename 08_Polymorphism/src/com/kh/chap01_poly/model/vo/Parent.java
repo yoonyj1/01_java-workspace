@@ -34,4 +34,7 @@ public class Parent { // 클래스 시작
 		System.out.println("나 부모야");
 	}
 	
+	public void print() {
+		System.out.println("나 부모야");
+	}
 } // 클래스 끝

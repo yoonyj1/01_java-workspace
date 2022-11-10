@@ -21,4 +21,12 @@ public class Child2 extends Parent { // 클래스 시작
 		this.n = n;
 	}
 	
+	public void printChild2() {
+		System.out.println("나 두번째 자식이야.");
+	}
+	
+	@Override
+	public void print() {
+		System.out.println("나 두번째 자식이야");
+	}
 } // 클래스 끝
