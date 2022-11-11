@@ -55,4 +55,7 @@ public class ElectronicShop1 { // 클래스 시작
 		return tab;
 	}
 	// insert처럼 select를 같은 이름으로 하면 안되는 이유: 매개변수가 없어 중복이 발생 => 오류발생
+	
+	// 현재 메소드 : 6개
+	// 다형성 적용 시 2-3개로 줄일 수 있음.
 } // 클래스 끝
