@@ -24,7 +24,7 @@ public class Tablet extends Electronic { //클래스 시작
 
 	@Override
 	public String toString() {
-		return super.toString() + ", penFlag: " + penFlag;
+		return super.toString() + ", penFlag: " + (penFlag ? "있음" : "없음");
 	}
 	
 } // 클래스 끝
