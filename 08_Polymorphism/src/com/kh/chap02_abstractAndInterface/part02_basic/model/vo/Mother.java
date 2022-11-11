@@ -24,7 +24,7 @@ public class Mother extends Person { // 클래스 시작
 
 	@Override
 	public String toString() {
-		return super.toString() + "babyBirth: " + babyBirth;
+		return super.toString() + ", babyBirth: " + babyBirth;
 	}
 	
 	@Override
@@ -37,7 +37,8 @@ public class Mother extends Person { // 클래스 시작
 
 	@Override
 	public void sleep() {
-		
+		// 잠자면 건강도 20 증가
+		super.setHealth(super.getHealth() + 20);
 	}
 	
 } // 클래스 끝

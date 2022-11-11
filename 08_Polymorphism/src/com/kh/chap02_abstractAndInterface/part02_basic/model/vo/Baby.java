@@ -17,7 +17,7 @@ public class Baby extends Person { // 클래스 시작
 		return super.toString();
 	}
 
-	@Override
+	@Override   
 	public void eat() {
 		// 밥먹으면 몸무게 3 증가
 		super.setWeight(super.getWeight() + 3);
@@ -27,7 +27,8 @@ public class Baby extends Person { // 클래스 시작
 
 	@Override
 	public void sleep() {
-		
+		// 잠자면 건강도 3 증가
+		super.setHealth(super.getHealth() + 3);
 	}
 	
 } // 클래스 끝

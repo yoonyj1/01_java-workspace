@@ -1,6 +1,6 @@
 package com.kh.chap02_abstractAndInterface.part02_basic.model.vo;
 
-public abstract class Person { // 클래스 시작
+public abstract class Person implements Basic { // 클래스 시작
 
 	// 필드부
 	private String name;
@@ -46,8 +46,8 @@ public abstract class Person { // 클래스 시작
 		return "name: " + name + ", weight: " + weight + ", health: " + health;
 	}
 	
-	public abstract void eat();
-	
-	public abstract void sleep();
+	// public abstract void eat();
+
+	// public abstract void sleep();
 
 } // 클래스 끝
