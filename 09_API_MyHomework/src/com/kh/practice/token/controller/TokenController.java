@@ -4,27 +4,27 @@ import java.util.StringTokenizer;
 
 public class TokenController {
 
-	public String afterToken(String str) {
+	public TokenController() {};
 
+	public String afterToken(String str) {
 		StringTokenizer stn = new StringTokenizer(str, " ");
-		str = "";
+		
+		String str1 = "";
 		
 		while (stn.hasMoreTokens()) {
-			str += stn.nextToken();
+			str1 += stn.nextToken();
 		}
-		return str;
+		return str1;
 	}
 
 	public String firstCap(String input) {
-
 		char ch = input.toUpperCase().charAt(0);
 		String str = input.substring(1, input.length());
-
+		
 		return ch + str;
 	}
 
 	public int findChar(String input, char one) {
-
 		int count = 0;
 
 		char[] arr = input.toCharArray();
@@ -33,7 +33,7 @@ public class TokenController {
 				count++;
 			}
 		}
+
 		return count;
 	}
-
 }
