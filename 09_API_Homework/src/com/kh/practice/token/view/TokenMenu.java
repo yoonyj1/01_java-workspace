@@ -12,9 +12,8 @@ public class TokenMenu {
 	// 메인
 	public void mainMenu() {
 
-		boolean run = true;
-
-		while (run) {
+		System.out.println("윤여진");
+		while (true) {
 			System.out.println("1. 지정문자열");
 			System.out.println("2. 입력문자열");
 			System.out.println("9. 프로그램 종료");
@@ -29,7 +28,7 @@ public class TokenMenu {
 				inputMenu();
 			} else if (num == 9) {
 				System.out.println("프로그램을 종료합니다.");
-				run = false;
+				return;
 			} else {
 				System.out.println("잘못입력하셨습니다. 다시 입력해주세요");
 			}
