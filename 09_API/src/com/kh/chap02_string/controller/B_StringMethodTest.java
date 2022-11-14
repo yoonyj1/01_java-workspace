@@ -17,11 +17,11 @@ public class B_StringMethodTest { // 클래스 시작
 		// 문자열과 전달된 또 다른 문자열을 하나로 합쳐서 새로운 문자열 return
 		System.out.println("====== 2. 문자열.concat(String str) : String ======");
 
-		// 방법1. concat
+			// 방법1. concat
 		String str2 = str1.concat("!!!");
 		System.out.println("str2: " + str2);
 
-		// 방법2.
+			// 방법2.
 		String str3 = str1 + "!!!";
 		System.out.println("str3: " + str3);
 
@@ -43,8 +43,74 @@ public class B_StringMethodTest { // 클래스 시작
 		System.out.println("====== 5. 문자열.length() ======");
 		System.out.println("str1의 길이: " + str1.length());
 		
+		// 6. 문자열.substring(int beginIndex) : String => 문자열의 beginIndex 위치에서 끝까지의 문자열 출력
+		//	  문자열.substring(int beginIndex, int endIndex) : String => 문자열의 beginIndex 위치에서 endIndex - 1까지의 문자열 출력
+		System.out.println("====== 6. 문자열.substring() ======");
+		System.out.println(str1.substring(3));
+		System.out.println(str1.substring(3, 7));
 		
+		// ** Quiz
+		// Hello World
+		// 012345678910
+		// 1. str1에서 Worl만 추출 + concat()으로 ! 붙여서 => Worl!
+		// 2. contains 함수를 이용해서 !가 포함돼있는지 여부 => str0에 !가 포함돼있습니까 : true
+		
+		System.out.println("====== 퀴즈 ======");
+		String str0 = str1.substring(6, 10).concat("!"); // 함수 연달아서 사용가능
+		// System.out.println(str0);
+		System.out.println("str0에 !가 포함돼있습니까: " + str0.contains("!"));
 
+		// 7. 문자열.replace(char oldChar, char newChar) : String
+		//		문자열 oldChar 문자들을 newChar로 변환한 새 문자열 return
+		
+		// str1 = Hello World
+		System.out.println("====== 7. 문자열.replace() ======");
+		
+		String str4 = str1.replace('l', 'c'); // Hello World에서 l을 다 c로 바꿈 => Hecco Worcd
+		System.out.println("str4: " + str4);
+		System.out.println("str1이 변경됐나?: " + str1); // 원래 문자열은 변경되지 않음
+		
+		// 8. 문자열.toUpperCase()
+		// 문자열을 다 대문자로 변경한 새 문자열 리턴
+		// 문자열.toLowerCase() : 문자열을 다 소문자로 변경
+		System.out.println("====== 8-1. 문자열.toUpperCase() ======");
+		String str5 = str1.toUpperCase();
+		System.out.println("str5: " + str5);
+		
+		System.out.println("====== 8-2. 문자열.toLowerCase() ======");
+		System.out.println("Lower: " + str5.toLowerCase());
+		
+		/*
+		 * System.out.print("계속 하시겠습니까 (y/n)");
+		 * char ch = sc.nextLine().charAt(0);
+		 * 
+		 * if(ch == 'N' || 'n') {
+		 * 	// 프로그램 종료
+		 *  }
+		 *  
+		 *  System.out.print("계속 하시겠습니까 (y/n)");
+		 * 	char ch = sc.nextLine().toUpperCase().charAt(0); // Y or N
+		 * 	char ch = sc.nextLine().charAt(0).toUpperCase(); // 안됨 => String 클래스에서 제공하는 함수이기 때문에
+		 * 
+		 * if(ch == 'N') {
+		 * 	// 프로그램 종료
+		 *  }
+		 */
+		
+		// 9. 문자열.trim() : String : 문자열 앞뒤 공백을 제거시킨 새 문자열 리턴
+		System.out.println("====== 9. 문자열.trim() ======");
+		String str6 = "   Ja   Va   ";
+		System.out.println("str6: " + str6.trim());
+		
+		// 10. 문자열.toCharArray() : char[]
+		System.out.println("====== 10. 문자열.toCharArray() ======");
+		char[] arr = str1.toCharArray();
+		System.out.println(arr[3]);
+
+		// 11. String.valueOf(char[] data) : String
+		System.out.println("====== 11. String.valueOf(char[] data) ======");
+		System.out.println(String.valueOf(arr));
+	
 	} // method1 끝
 
 } // 클래스 끝
