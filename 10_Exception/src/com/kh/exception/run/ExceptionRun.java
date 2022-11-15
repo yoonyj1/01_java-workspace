@@ -1,5 +1,7 @@
 package com.kh.exception.run;
 
+import com.kh.exception.controller.A_UncheckedException;
+
 public class ExceptionRun {
 
 	public static void main(String[] args) {
@@ -23,6 +25,11 @@ public class ExceptionRun {
 		 *  1. try - catch문 (try - with - resource)
 		 *  2. throws를 이용 (떠넘기기 == 위임하기)
 		 */
+		
+		A_UncheckedException a = new A_UncheckedException();
+		//a.method1();
+		//a.method2();
+		a.method3();
 	}
 
 }
