@@ -3,7 +3,7 @@ package com.kh.exception.controller;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class A_UncheckedException {
+public class A_UncheckedException { // 클래스 시작
 	/*
 	 * * RuntimeException
 	 *  - 프로그램 실행 시 발생되는 예외
@@ -20,7 +20,7 @@ public class A_UncheckedException {
 
 	Scanner sc = new Scanner(System.in);
 
-	public void method1() {
+	public void method1() { // method1  시작
 		// ArithmeticException: 0으로 나누기 연산을 하려할 경우 발생되는 예외
 		System.out.print("첫번째 정수: ");
 		int num1 = sc.nextInt();
@@ -61,9 +61,9 @@ public class A_UncheckedException {
 		}
 		
 		System.out.println("프로그램을 종료합니다.");
-	}
+	} // method1 끝
 
-	public void method2() {
+	public void method2() { // method2 시작
 		// NegativeArraySizeException: 배열 할당 과정에서 배열의 크기를 음수로 지정하는 경우 발생되는 예외
 		// ArrayIndexOutOfBoundsException: 배열의 부적절한 인덱스를 가지고 접근 시 발생되는 예외
 		
@@ -93,11 +93,13 @@ public class A_UncheckedException {
 		// int[] arr = new int[size];
 		// System.out.println("100번 인덱스의 값: " + arr[100]); // 배열의 크기를 100보다 작은 수 입력 시 ArrayIndexOutOfBoundsException
 		// -500 입력 시 NegativeArraySizeException 발생
-	}
+	} // method2 끝
 	
-	public void method3() {
+	public void method3() { // method3 시작
 		System.out.print("배열의 크기: ");
-		
+		/*
+		// 다중 catch 블럭 작성 가능
+		// 각각의 예외 발생 시 실행할 내용이 별개인 경우 세분화해서 다중 catch 블럭으로 기술하는 게 적절함.
 		try {
 			int size = sc.nextInt();
 			int[] arr = new int[size];
@@ -109,7 +111,32 @@ public class A_UncheckedException {
 		} catch (InputMismatchException e) { // import => java.util
 			System.out.println("정수로만 입력해야합니다.");
 		}
+		*/
+		
+		try {
+			int size = sc.nextInt();
+			int[] arr = new int[size];
+			System.out.println("arr의 100번째 인덱스: " + arr[100]);
+		} catch (InputMismatchException e) {
+			System.out.println("정수가 아닌 값 입력");
+		} catch (RuntimeException e) { // 다형성 적용해서 부모타입예외 클래스 작성가능
+									   // 모든 자식 예외 발생 시 다 받아서 처리할 수 있음
+			System.out.println("예외 발생(배열 크기 잘못 지정, 부적절한 인덱스)");
+		}
+		
+		// 부모예외 클래스와 자식예외 클래스를 가지고 catch 블럭을 기술하고자 할 때는 
+		// 자식예외 클래스 catch 블럭이 위에 있어야함 (아니면 unreachable catch block 오류)
 		
 		System.out.println("프로그램을 종료합니다.");
-	}
-}
+		
+		/*
+		 * RuntimeException 관련 애들은 UnCheckedException (예외처리 구문이 필수는 아님)
+		 * if문: 애초에 예외자체가 발생되기 전에 소스코드로 핸들링(예외처리 구문이 아님)
+		 * try-catch문: 예외가 "발생했을 경우" 처리해주는 구문을 작성해두는 것(예외처리 구문 O)
+		 * 
+		 * 예측가능한 상황은 if문 조건검사로 해결하는 게 권장사항
+		 * 부득이하게 조건문으로 핸들링이 안되는 구문 예외처리 구문으로 작성해둘 것
+		 */
+	} // method3 끝
+	
+} // 클래스 끝
