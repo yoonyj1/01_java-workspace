@@ -17,6 +17,8 @@ public class TokenMenu {
 
 			System.out.print("메뉴 번호: ");
 			int num = sc.nextInt();
+			
+			sc.nextLine();
 
 			switch (num) {
 			case 1:
@@ -33,11 +35,8 @@ public class TokenMenu {
 
 			default:
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+				break;
 			}
-			// 1. 지정 문자열 ➔ tokenMenu()
-			// 2. 입력 문자열 ➔ inputMenu()
-			// 3. 프로그램 끝내기 ➔ “프로그램을 종료합니다” 출력 후 종료
-			// 잘못 입력했을 시 “잘못 입력하셨습니다. 다시 입력해주세요.” 출력 후 반복
 		}
 	}
 
@@ -50,16 +49,14 @@ public class TokenMenu {
 
 		// TokenController(tc)의 afterToken()의 반환 값을 가지고
 		// 토큰 처리 후 글자, 토큰 처리 후 개수, 모두 대문자로 변환 한 것을 출력
-		System.out.println("토큰 처리 후 글자 : " + tc.afterToken(str));
-		System.out.println("토큰 처리 후 개수 : " + tc.afterToken(str).length());
-		System.out.println("모두 대문자로 변환 : " + tc.afterToken(str).toUpperCase());
+		String token = tc.afterToken(str);
+		System.out.println("토큰 처리 후 글자 : " + token);
+		System.out.println("토큰 처리 후 개수 : " + token.length());
+		System.out.println("모두 대문자로 변환 : " + token.toUpperCase());
 
 	}
 
 	public void inputMenu() {
-
-		Scanner sc = new Scanner(System.in);
-
 		System.out.print("문자열을 입력하세요 : ");
 		String input = sc.nextLine();
 		// tc에 firstCap()로 입력 받은 문자열을 넘기고 반환 값 출력
@@ -68,8 +65,7 @@ public class TokenMenu {
 
 		System.out.print("찾을 문자를 하나 입력하세요 : ");
 		char one = sc.nextLine().charAt(0);
-		System.out.println(one + " 문자가 들어간 개수: " + tc.findChar(input, one));
-
+		System.out.println(one + " 문자가 들어간 개수 : " + tc.findChar(input, one));
 	}
 
 }
