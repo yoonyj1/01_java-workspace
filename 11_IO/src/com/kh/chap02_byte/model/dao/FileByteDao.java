@@ -79,6 +79,7 @@ public class FileByteDao { // 클래스 시작
 			
 			// 2. 파일로부터 데이터를 읽어들이기 => read()
 			// 1바이트 단위로 하나씩 읽어옴 / 반환형이 int여서 숫자로 읽어들임
+			/*
 			System.out.println(fin.read()); // a
 			System.out.println(fin.read()); // b
 			System.out.println(fin.read()); //  
@@ -87,6 +88,31 @@ public class FileByteDao { // 클래스 시작
 			System.out.println(fin.read()); // e
 			System.out.println(fin.read()); // d
 			System.out.println(fin.read()); // e
+			System.out.println(fin.read()); // 파일의 끝: -1 반환
+			System.out.println(fin.read()); // 파일의 끝: -1 반환
+			*/
+			
+			/* 반복문 수행 시 매번 read()가 두번씩 실행되기 때문에 퐁당퐁당 읽어짐
+			while(fin.read() != -1) { // 읽어들인 값이 -1이 아닐 경우에만 반복적으로 실행되도록
+				System.out.println(fin.read());	
+			}
+			*/
+			// 해결방법1. 무한반복으로 돌리면서 매번 조건검사
+			/*
+			while(true) {
+				int value = fin.read(); // a(97)
+				if(value == -1) {
+					break;
+				}
+				System.out.println(value);
+			}
+			*/
+			
+			// 해결방법2. (권장)
+			int value = 0;
+			while ((value = fin.read()) != -1) { // 읽어들이는 값이 -1이 아닌 경우에만 반복적으로 실행
+				System.out.println(value);
+			}
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -101,4 +127,6 @@ public class FileByteDao { // 클래스 시작
 		}
 		
 	} // fileRead 끝
+	
+	
 } // 클래스 끝
