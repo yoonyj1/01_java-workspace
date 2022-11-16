@@ -7,7 +7,8 @@ public class FileCharRun {
 	public static void main(String[] args) {
 
 		FileCharDao dao = new FileCharDao();
-		dao.fileSave();
+		//dao.fileSave();
+		dao.fileRead();
 	}
 
 }
