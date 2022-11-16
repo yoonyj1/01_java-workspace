@@ -29,10 +29,10 @@ public class FileByteDao { // 클래스 시작
 		// 3. 다 사용한 후 스트림 반납 (필수)
 		
 		// 1. FileOutputStream 객체 생성 => 해당 파일과의 연결 통로가 만들어짐
-		FileOutputStream fout = null; // 해당 파일이 없으면 새로 만들어주고 통로연결 / 있으면 통로연결
+		FileOutputStream fout = null; // finally 구문에 fout 사용하기 위해서 전역변수로 선언
 		
 		try {
-			fout = new FileOutputStream("a_byte.txt");
+			fout = new FileOutputStream("a_byte.txt"); // 해당 파일이 없으면 새로 만들어주고 통로연결 / 있으면 통로연결
 			// 2. 파일에 데이터를 출력하고자 할 때 write 메소드 사용
 			//    숫자를 출력하든 문자를 출력하든 파일에 기록되는 것은 문자로 기록됨(아스키코드)
 			fout.write(97); // 'a'가 저장됨
@@ -113,7 +113,6 @@ public class FileByteDao { // 클래스 시작
 			while ((value = fin.read()) != -1) { // 읽어들이는 값이 -1이 아닌 경우에만 반복적으로 실행
 				System.out.println(value);
 			}
-			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
