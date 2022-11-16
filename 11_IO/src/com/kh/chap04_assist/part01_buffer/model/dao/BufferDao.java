@@ -53,6 +53,37 @@ public class BufferDao {
 		}
 		*/
 		
+		// try-with-resource문으로 자원반납까지 간단하게 작업할 수 있음
+		// jdk7버전 이상
+		
+		/* 기존구문
+		 * try{
+		 * 
+		 * } catch (예외클래스) {
+		 * 
+		 * }
+		 */
+		/* try-with-resource문
+		 * try(try블럭 내에서 사용할 스트림 객체 생성 구문) {
+		 * 
+		 * 
+		 * } catch (예외클래스) {
+		 * 
+		 * 
+		 * }
+		 */
+		
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("c_buffer.txt"))) {
+			// write 메소드 이용해서 데이터 출력
+			bw.write("ㅎㅇ\n");
+			bw.write("ㅎㅇㅎㅇ");
+			bw.newLine();
+			bw.write("ㅂㅇㅂㅇ");
+			// 버퍼라는 공간에 쌓아놨다가 한번에 출력 => 속도향상
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		
 	} // fileSave() 끝
 }
