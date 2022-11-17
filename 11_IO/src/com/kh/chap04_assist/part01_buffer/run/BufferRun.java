@@ -7,7 +7,8 @@ public class BufferRun { // 클래스 시작
 	public static void main(String[] args) { // main 시작
 		BufferDao dao = new BufferDao();
 		
-		dao.fileSave();
+		//dao.fileSave();
+		dao.fileRead();
 		
 	} // main 끝
 	

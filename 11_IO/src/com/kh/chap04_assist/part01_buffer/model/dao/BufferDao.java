@@ -1,6 +1,9 @@
 package com.kh.chap04_assist.part01_buffer.model.dao;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -63,6 +66,7 @@ public class BufferDao {
 		 * 
 		 * }
 		 */
+		
 		/* try-with-resource문
 		 * try(try블럭 내에서 사용할 스트림 객체 생성 구문) {
 		 * 
@@ -86,4 +90,36 @@ public class BufferDao {
 		
 		
 	} // fileSave() 끝
+	
+	// 프로그램 <----- 파일 (입력)
+	public void fileRead() { // fileRead 메소드 시작
+		// FileReader: 파일과 연결해서 2바이트 단위로 데이터를 입력받을 수 있는 기반스트림
+		// BufferedReader: 속도향상에 도움이 되는 보조스트림 
+		
+		
+		try (BufferedReader br = new BufferedReader(new FileReader("c_buffer.txt"))){
+			// br.read();
+			// br.readLine();
+			
+			/*
+			System.out.println(br.readLine()); // 1번줄 출력
+			System.out.println(br.readLine()); // 2번줄 출력
+			System.out.println(br.readLine()); // 3번줄 출력
+			
+			System.out.println(br.readLine()); // 파일의 끝: null 출력
+			System.out.println(br.readLine()); // 파일의 끝: null 출력
+			*/
+			
+			String value = null;
+			while ((value = br.readLine()) != null) { // null 비교할 때는 equals 안써도 됨  !=, == 사용가능
+				System.out.println(value);
+			}
+			
+		} catch (FileNotFoundException e) { // 자식 => 위에 있어야한다. 없어도 상관없음
+			e.printStackTrace();
+		} catch (IOException e) { // 부모
+			e.printStackTrace();
+		} 
+		
+	} // fileRead 끝
 }
