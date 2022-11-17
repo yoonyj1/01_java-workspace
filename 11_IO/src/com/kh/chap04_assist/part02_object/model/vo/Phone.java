@@ -3,7 +3,9 @@ package com.kh.chap04_assist.part02_object.model.vo;
 import java.io.Serializable;
 
 public class Phone implements Serializable { // 클래스 시작
-
+	// 객체 자체를 입출력하고자 한다면 직렬화 과정 필수
+	
+	
 	// 필드부
 	private String name;
 	private int price;
