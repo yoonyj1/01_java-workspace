@@ -36,17 +36,21 @@ public class ArrayListRun {
 		
 		System.out.print("구매할 핸드폰: ");
 		String buy = sc.nextLine();
-		
+		/*
 		for (int i = 0; i < list.size(); i++) {
 			if (buy.equals(list.get(i).getName())) {
 				System.out.println("당신이 구매하려는 휴대폰의 가격은 " + list.get(i).getPrice() + "원 입니다.");
 			}
 			
 		}
+		*/
+		
+		for (Phone p : list) {
+			if(p.getName().equals(buy)) {
+				System.out.println("당신이 구매하려는 휴대폰의 가격은 " + p.getPrice() + "원 입니다.");
+			}
+		}
 		sc.close();
-	
-		
-		
 	}
 
 }
