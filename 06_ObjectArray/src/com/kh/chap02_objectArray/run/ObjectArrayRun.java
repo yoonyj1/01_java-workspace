@@ -35,7 +35,7 @@ public class ObjectArrayRun { //클래스 시작
 		phones[1] = new Phone("아이폰", "애플", 1300000, "11PRO");
 		phones[2] = new Phone("갤럭시", "삼성", 1200000, "s20");
 
-		// 총 가격과 평균가격을 구하기
+		// 총 가격과 평균가격 구하기
 		int total = 0;
 		for (int i = 0; i < phones.length; i++) { // for 시작
 			System.out.println(phones[i].information());

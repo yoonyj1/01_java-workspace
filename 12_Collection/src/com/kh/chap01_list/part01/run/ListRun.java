@@ -45,6 +45,8 @@ public class ListRun { // 클래스 시작
 		// E -> Element: 리스트에 담길 데이터들(요소)
 		
 		// 1. add(E e): 리스트 공간 끝에 전달될 데이터를 추가시켜주는 메소드
+		System.out.println("=== 1. add(E e): 리스트 공간 끝에 전달될 데이터를 추가시켜주는 메소드 ===");
+		
 		list.add(new Music("Attention", "뉴진스"));
 		list.add(new Music("새삥", "지코"));
 		list.add(new Music("죽일놈", "다이나믹듀오"));
@@ -59,26 +61,35 @@ public class ListRun { // 클래스 시작
 		// list 특징: 순서유지 담김 (0번 인덱스부터 차곡차곡)
 		
 		// 2. add(int index, E e): 직접 인덱스를 저장해서 해당 인덱스 위치에 데이터를 추가시켜주는 메소드
+		System.out.println("=== 2. add(int index, E e): 직접 인덱스를 저장해서 해당 인덱스 위치에 데이터를 추가시켜주는 메소드 ===");
 		list.add(1, new Music("진심이 담긴 노래", "케이시"));
 		// 중간 위치에 데이터 추가시 복잡한 알고리즘 구현 안함 -> 장점2
 		
 		System.out.println(list); // [title: Attention, artist: 뉴진스, title: 진심이 담긴 노래, artist: 케이시, title: 새삥, artist: 지코, title: 죽일놈, artist: 다이나믹듀오, 가보자고] 출력
 		
 		// 3. remove(int index): 해당 인덱스 위치의 데이터를 삭제시켜주는 메소드
+		System.out.println("=== 3. remove(int index): 해당 인덱스 위치의 데이터를 삭제시켜주는 메소드 ===");
+		
 		list.remove(1);
 		
 		System.out.println(list); // [title: Attention, artist: 뉴진스, title: 새삥, artist: 지코, title: 죽일놈, artist: 다이나믹듀오, 가보자고] 출력
 		
 		// 4. set(int index, E e): 해당 인덱스 위치의 데이터를 새롭게 전달된 e로 수정시켜주는 메소드
+		System.out.println("=== 4. set(int index, E e): 해당 인덱스 위치의 데이터를 새롭게 전달된 e로 수정시켜주는 메소드 ===");
+		
 		list.set(0, new Music("nextLevel", "에스파"));
 		
 		System.out.println(list); // [title: nextLevel, artist: 에스파, title: 새삥, artist: 지코, title: 죽일놈, artist: 다이나믹듀오, 가보자고] 출력
 		
 		// 5. size(): 해당 리스트의 사이즈를 반환시켜주는 메소드 => 몇개의 데이터가 담겨있는지
+		System.out.println("=== 5. size(): 해당 리스트의 사이즈를 반환시켜주는 메소드 ===");
+		
 		System.out.println("리스트의 사이즈: " + list.size());
 		
 		// 6. get(int index): 해당 인덱스 위치의 객체를 반환시켜주는 메소드
 		// 변수에 저장해서 출력하는 방법
+		System.out.println("=== 6. get(int index): 해당 인덱스 위치의 객체를 반환시켜주는 메소드 ===");
+		
 		Music m = (Music)list.get(0);
 		String s = (String)list.get(3);
 		
@@ -91,10 +102,43 @@ public class ListRun { // 클래스 시작
 		System.out.println(((Music)list.get(1)).getTitle()); // Object 타입이기 때문에 강제형변환을 해줘야함
 		
 		// 7. subList(int index1, int index2): List : index1부터 index2전까지의 데이터를 추출해서 새로운 List로 반환 - substring 같은 개념
-		List sub = list.subList(0, 2); // 반환형이 List이기 때문
+		System.out.println("=== 7. subList(int index1, int index2): List : index1부터 index2전까지의 데이터를 추출해서 새로운 List로 반환 - substring 같은 개념 ===");
+		
+		List sub = list.subList(0, 2); // [title: nextLevel, artist: 에스파, title: 새삥, artist: 지코] 출력 
+		// 반환형이 List이기 때문
 		
 		System.out.println(sub);
 		
+		// 8. addAll(Collection c): c를 통째로 기존 리스트 끝에 이어붙여줌 
+		System.out.println("=== 8. addAll(Collection c): c를 통째로 기존 리스트 끝에 이어붙여줌 ===");
+		
+		list.addAll(sub);
+		System.out.println(list);
+		
+		// 9. isEmpty(): boolean : 컬렉션이 비어있는지 묻는 메소드
+		System.out.println("=== 9. isEmpty(): boolean : 컬렉션이 비어있는지 묻는 메소드 ===");
+
+		System.out.println(list.isEmpty());
+		
+		// 10. clear(): 리스트 안에 있는 내용을 싹 지워주는 메소드
+		System.out.println("=== 10. clear(): 리스트 안에 있는 내용을 싹 지워주는 메소드 ===");
+		
+		// list.clear();
+		System.out.println(list);
+		
+		System.out.println(list.isEmpty());
+		
+		// 반복문을 통해 순차적으로 출력
+		System.out.println("======= 반복문을 이용한 출력 =======");
+		// 1) 단순한 for 문
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
+		System.out.println("-------------");
+		// 2) 향상된 for문
+		for (Object o : list) { // 
+			System.out.println(o);
+		}
 	} // main 끝
 
 } // 클래스 끝
