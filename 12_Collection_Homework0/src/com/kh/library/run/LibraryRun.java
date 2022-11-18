@@ -139,11 +139,12 @@ public class LibraryRun {
 				} else if(num == 6) {
 					continue;
 				}
-				
+				break;
 				
 			case 4:
-				System.out.println("전체책 가격 합계 : " + bc.getTotalPrice());
-				System.out.println("전체책 가격 평균 : " + bc.getAvgPrice());
+				System.out.println("전체책 가격 합계 : " + bc.getTotalPrice() + "원");
+				System.out.println("전체책 가격 평균 : " + bc.getAvgPrice() + "원");
+				break;
 				
 			case 5:
 				System.out.println("프로그램을 종료합니다.");
