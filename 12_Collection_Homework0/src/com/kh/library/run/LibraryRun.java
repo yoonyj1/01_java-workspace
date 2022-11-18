@@ -137,13 +137,20 @@ public class LibraryRun {
 					System.out.println(bc.searchBookByTitle(title1));
 				} else if (num == 3) {
 					System.out.print("출간연도를 입력하세요 (올해 --> 2022): ");
-					int year = sc.nextInt();
+					int year1 = sc.nextInt();
 					
-					System.out.println(bc.magazineOfThisYearInfo(year)); 
+					System.out.println(bc.magazineOfThisYearInfo(year1)); 
 				} else if (num == 4) {
-//					bc.searchBookByPublisher(publisher);
+					System.out.print("출판사를 입력하세요.: ");
+					String publisher1 = sc.nextLine();
+					
+					System.out.println(bc.searchBookByPublisher(publisher1));
 				} else if (num == 5) {
-//					bc.searchBookByPrice(price)
+					System.out.print("가격을 입력하세요: ");
+					int price1 = sc.nextInt();
+					sc.nextLine();
+					
+					System.out.println(bc.searchBookByPrice(price1));
 				} else if(num == 6) {
 					continue;
 				}

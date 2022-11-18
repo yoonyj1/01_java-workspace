@@ -1,6 +1,7 @@
 package com.kh.library.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import com.kh.library.model.vo.Book;
 import com.kh.library.model.vo.Magazine;
@@ -83,24 +84,40 @@ public class BookController implements BookManager {
 
 	@Override
 	public ArrayList<Book> magazineOfThisYearInfo(int year) {
-		ArrayList<Book> thisYearMagazine = new ArrayList<Book>();
-		Book m = new Magazine();
-			for (Book b : bList) {
-				if (year == ((Magazine) b).getYear()) {
-					thisYearMagazine.add(b);
+		ArrayList<Book> yearBook = new ArrayList<Book>();
+		
+		for (Book b : bList) { // b = bList.get(0) -> b = bList.get(1) ....
+			if (b instanceof Magazine) { 
+					if (year == ((Magazine) b).getYear()) {
+					
+						yearBook.add(b);
 				}
+				
 			}
-		return thisYearMagazine;
+		}
+		return yearBook;
 	}
 
 	@Override
 	public ArrayList<Book> searchBookByPublisher(String publisher) {
-		return null;
+		ArrayList<Book> pubBook = new ArrayList<>();
+		for (Book book : bList) {
+			if (book.getPublisher().contains(book.getPublisher())) {
+				pubBook.add(book);
+			}
+		}
+		return pubBook;
 	}
 
 	@Override
 	public ArrayList<Book> searchBookByPrice(int price) {
-		return null;
+		ArrayList<Book> priBook = new ArrayList<>();
+		for (Book book : bList) {
+			if (price >= book.getPrice()) {
+				priBook.add(book);
+			}
+		}
+		return priBook;
 	}
 
 	@Override
