@@ -121,6 +121,8 @@ public class LibraryRun {
 				System.out.println("5. 특정 가격 밑으로 책 찾기");
 				System.out.println("6. 이전으로");
 				
+				System.out.println("=================================");
+				System.out.print("메뉴번호를 입력해주세요: ");
 				int num = sc.nextInt();
 				sc.nextLine();
 				

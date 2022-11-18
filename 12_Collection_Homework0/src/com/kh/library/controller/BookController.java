@@ -33,21 +33,27 @@ public class BookController implements BookManager {
 
 	@Override
 	public Book searchBookBybNo(String bNo) {
-		
 		Book Book1 = new Book(null, null, null, null, 0, null);
 		for (Book book : bList) {
 			if (bNo.contains(book.getbNo())) {
-				return book;
-			} else {
-				return Book1;
+				Book1.setbNo(book.getbNo());
+				Book1.setTitle(book.getTitle());
+				Book1.setAuthor(book.getAuthor());
+				Book1.setPublisher(book.getPublisher());
+				Book1.setPrice(book.getPrice());
+				Book1.setDescription(book.getDescription());
 			}
 
 		}
+		return Book1;
 	}
 
 	@Override
 	public ArrayList<Book> searchBookByTitle(String title) {
-		return null;
+		ArrayList<Book> book1 = new ArrayList<Book>();
+		
+		
+		return book1;
 	}
 
 	@Override
