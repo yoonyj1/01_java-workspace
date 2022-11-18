@@ -131,9 +131,15 @@ public class LibraryRun {
 					String bNo1 = sc.nextLine();
 					System.out.println(bc.searchBookBybNo(bNo1));
 				} else if (num == 2) {
-//					bc.searchBookByTitle(title);
+					System.out.print("책 제목을 입력하세요: ");
+					String title1 = sc.nextLine();
+					
+					System.out.println(bc.searchBookByTitle(title1));
 				} else if (num == 3) {
-//					bc.magazineOfThisYearInfo();
+					System.out.print("출간연도를 입력하세요 (올해 --> 2022): ");
+					int year = sc.nextInt();
+					
+					System.out.println(bc.magazineOfThisYearInfo(year)); 
 				} else if (num == 4) {
 //					bc.searchBookByPublisher(publisher);
 				} else if (num == 5) {

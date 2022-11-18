@@ -51,8 +51,11 @@ public class BookController implements BookManager {
 	@Override
 	public ArrayList<Book> searchBookByTitle(String title) {
 		ArrayList<Book> book1 = new ArrayList<Book>();
-		
-		
+		for (Book b : bList) {
+			if(b.getTitle().contains(title)) {
+				book1.add(b);
+			}
+		}
 		return book1;
 	}
 
@@ -80,7 +83,14 @@ public class BookController implements BookManager {
 
 	@Override
 	public ArrayList<Book> magazineOfThisYearInfo(int year) {
-		return null;
+		ArrayList<Book> thisYearMagazine = new ArrayList<Book>();
+		Book m = new Magazine();
+			for (Book b : bList) {
+				if (year == ((Magazine) b).getYear()) {
+					thisYearMagazine.add(b);
+				}
+			}
+		return thisYearMagazine;
 	}
 
 	@Override
