@@ -2,6 +2,7 @@ package com.kh.chap02_set.part01_hashSet.run;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 
 import com.kh.chap02_set.part01_hashSet.model.vo.Student;
 
@@ -15,7 +16,7 @@ public class SetRun { // 클래스 시작
 		// String hashCode() => "실제 담긴 문자열"을 가지고 10진수 형태로 만들어서 반환
 		// String equals()   => "실제 담긴 문자열"을 가지고 비교해서 일치하면 true, 일치하지 않으면 false 반환
 		
-		HashSet hs1 = new HashSet();
+		HashSet<String> hs1 = new HashSet<>();
 		
 		// ArrayList랑 동일하게 함수사용 가능
 		hs1.add("반갑습니다.");
@@ -85,6 +86,19 @@ public class SetRun { // 클래스 시작
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list2.get(i));
 		}
+		
+		// 사용하는 경우: 짜려고하는 프로그램이 중복된 데이터가 있으면 안되는 경우 사용 (거의 안쓰임)
+		
+		// 3. Iterator 반복자 이용해서 순차적으로 접근
+		System.out.println("---------- 3. Iterator 반복자 이용해서 순차적으로 접근 ----------");
+		Iterator<Student> it = hs2.iterator();
+		while(it.hasNext()) {
+			Student s = it.next();
+			System.out.println(s);
+		}
+		
+		// it.next(); // NoSuchElementException: 더 이상 갖고 올 요소가 없음
+		
 	} // main 끝
 
 } // 클래스 끝
