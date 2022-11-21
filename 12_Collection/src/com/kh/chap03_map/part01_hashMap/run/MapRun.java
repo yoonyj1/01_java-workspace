@@ -1,8 +1,8 @@
 package com.kh.chap03_map.part01_hashMap.run;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import com.kh.chap03_map.part01_hashMap.model.vo.Snack;
@@ -86,15 +86,32 @@ public class MapRun { // 클래스 시작
 		Iterator itKey = keySet.iterator();
 		
 		// 3) 반복문을 통해서 뽑기
-		while(itKey.hasNext()) {
+		while (itKey.hasNext()) {
 			String key = (String)itKey.next();
 			Snack value = (Snack)hm.get(key);
 			System.out.println(key + "=" + value);
 		}
+		System.out.println();
 		
 		// 2. entrySet() 이용
 		System.out.println("===== 2. entrySet() 이용 =====");
 		
+		// 1) hm.entrySet(): Set
+		Set<Entry<String, Snack>> entrySet = hm.entrySet();
+		
+		// 2) entrySet.iterator(): Iterator
+		Iterator<Entry<String, Snack>> itEntry = entrySet.iterator();
+		
+		// 3) 반복문을 통해서 가져오기
+		while (itEntry.hasNext()) {
+			Entry<String, Snack> entry = itEntry.next();
+			// 이 안에 key, value 둘 다 담겨있음
+			
+			String key = entry.getKey();
+			Snack value = entry.getValue();
+			
+			System.out.println(key + "=" + value);
+		}
 		
 	} // main 끝
 	
