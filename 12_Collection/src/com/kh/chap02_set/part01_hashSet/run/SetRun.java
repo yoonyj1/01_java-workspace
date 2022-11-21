@@ -1,5 +1,6 @@
 package com.kh.chap02_set.part01_hashSet.run;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 import com.kh.chap02_set.part01_hashSet.model.vo.Student;
@@ -10,6 +11,9 @@ public class SetRun { // 클래스 시작
 
 		// Object hashCode() => 해당 객체의 "주소값" 가지고 10진수 형태로 만들어서 반환
 		// Object equals()   => 두 객체의 "주소값"을 비교해서 일치하면 true, 일치하지 않으면 false 반환
+		
+		// String hashCode() => "실제 담긴 문자열"을 가지고 10진수 형태로 만들어서 반환
+		// String equals()   => "실제 담긴 문자열"을 가지고 비교해서 일치하면 true, 일치하지 않으면 false 반환
 		
 		HashSet hs1 = new HashSet();
 		
@@ -37,7 +41,50 @@ public class SetRun { // 클래스 시작
 		// HashSet이라는 공간에 객체가 추가될 때마다 동일객체인지 비교
 		// 동일객체: 각 객체마다 hashCode() 호출결과가 일치하고, equals() 비교시 true일 경우
 		
+		// ===>> hashCode(), equals() 오버라이드 후 다시 출력하면 중복제거
 		
+		System.out.println(new Student("공유", 43, 100).hashCode()); // 505004327
+		System.out.println(new Student("공유", 43, 100).hashCode()); // 505004327
+		
+		// 재정의한 hashCode() 메소드에 의해 둘 다 결과 똑같음 => 오버라이드 된 메소드 주석처리하고 돌리면 주소값이 다르게 출력
+		
+		System.out.println(new Student("공유", 43, 100).equals(new Student("공유", 43, 100))); // true 반환
+		// 오버라이드 된 equals 주석 걸고 돌리면 false 반환
+		
+		// hs2.get(); => 인덱스의 개념X, get메소드가 정의되어있지 않음 (한 객체만 뽑아올 수 없음)
+		
+		// hashSet에 담긴 모든 객체들에 순차적으로 접근
+		System.out.println("========== hashSet에 담긴 모든 객체들에 순차적으로 접근 ==========");
+		// 1. for문 사용가능(단, 향상된 for문(foreach)만 가능)
+		System.out.println("---------- 1. for문 사용가능(단, 향상된 for문(foreach)만 가능) ----------");
+		for (Student s : hs2) { // 제네릭이 안되있을 경우 Object형으로 해야함
+			System.out.println(s);
+		}
+		
+		/* foreach문만 쓰는 이유
+		for (int i = 0; i < hs2.size(); i++) {
+			System.out.println(); => 쓸 내용이 없음
+		}
+		*/
+		
+		// 2. ArrayList에 담아준 다음 ArrayList를 반복문 돌려가며 접근
+		System.out.println("---------- 2. ArrayList에 담아준 다음 ArrayList를 반복문 돌려가며 접근 ----------");
+		// ArrayList에 담는 첫번째 방법: ArrayList 생성 후 addAll() 메소드 이용해서 통째로 추가하기
+		System.out.println("----- ArrayList에 담는 첫번째 방법: ArrayList 생성 후 addAll() 메소드 이용해서 통째로 추가하기 -----");
+		ArrayList<Student> list = new ArrayList<Student>();
+		list.addAll(hs2);
+		
+		for (Student s : list) {
+			System.out.println(s);
+		}
+		
+		// ArrayList에 담는 두번째 방법: ArrayList 생성과 동시에 통째로 추가하기
+		System.out.println("----- ArrayList에 담는 두번째 방법: ArrayList 생성과 동시에 통째로 추가하기 -----");
+		ArrayList<Student> list2 = new ArrayList<Student>(hs2);
+		
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list2.get(i));
+		}
 	} // main 끝
 
 } // 클래스 끝
