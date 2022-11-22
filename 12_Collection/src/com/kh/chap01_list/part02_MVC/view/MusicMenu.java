@@ -54,11 +54,11 @@ public class MusicMenu {
 				break;
 
 			case 4:
-				
+				searchMusic();
 				break;
 				
 			case 5:
-				
+				updateMusic();
 				break;
 
 			case 0:
@@ -127,4 +127,62 @@ public class MusicMenu {
 		}
 	}
 
+	/**
+	 * 4. 특정곡 검색용 서브화면
+	 */
+	public void searchMusic() {
+		System.out.println("\n==== 특정 곡 검색 ====");
+		
+		/*
+		System.out.print("검색할 곡 명(키워드만도 가능): ");
+		String keyword = sc.nextLine();
+		*/
+		ArrayList<Music> searchList = mc.searchMusic(keyword);
+		
+		// 2. 심화버전
+		System.out.print("1)제목으로 검색");
+		System.out.print("2)가수명으로 검색");
+		System.out.print(">> 메뉴선택: ");
+		int menu = sc.nextInt();
+		sc.nextLine();
+		
+		System.out.print("검색 키워드: ");
+		String keyword = sc.nextLine();
+		
+		mc.searchMusic(menu, keyword);
+		
+		System.out.println("\n ==== 검색 결과 ====");
+		
+		if (searchList.isEmpty()) { // 비어있을 경우
+			System.out.println("검색 결과가 없습니다.");
+		} else {
+			for (int i = 0; i < searchList.size(); i++) {
+				System.out.println(searchList.get(i));
+			}
+		}
+	}
+	
+	/**
+	 * 5. 특정곡 수정용 서브화면
+	 */
+	public void updateMusic() {
+		System.out.println("\n==== 특정 곡 수정 ====");
+		System.out.print("수정하려는 곡명: ");
+		String title = sc.nextLine();
+		
+		System.out.print("수정내용(가수): ");
+		String upArtist = sc.nextLine();
+		
+		System.out.print("수정내용(곡명): ");
+		String upTitle = sc.nextLine();
+		
+		int result = mc.updateMusic(title, upArtist, upTitle);
+		
+		if (result > 0) {
+			System.out.println("성공적으로 수정됐습니다.");
+		} else {
+			System.out.println("수정할 곡을 찾지 못했습니다.");
+		}
+	}
+	
 }

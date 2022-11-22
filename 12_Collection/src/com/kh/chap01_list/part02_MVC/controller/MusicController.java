@@ -1,6 +1,7 @@
 package com.kh.chap01_list.part02_MVC.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import com.kh.chap01_list.part02_MVC.model.vo.Music;
 
@@ -39,4 +40,54 @@ public class MusicController {
 		// result == 0: 삭제할 곡 못찾음 1: 성공적으로 삭제
 		return result;
 	}
-}
+	
+	//1. 기본버전
+	public ArrayList<Music> searchMusic(String keyword) {
+		ArrayList<Music> searchList = new ArrayList<>();
+		
+		for (int i = 0; i < list.size(); i++) {
+			if(list.get(i).getTitle().contains(keyword)) {
+				searchList.add(list.get(i));
+			}
+		}
+		
+		return searchList;
+	}
+	
+	//2. 심화버전
+	public ArrayList<Music> searchMusic(int menu, String keyword){
+		ArrayList<Music> searchList = new ArrayList<>();
+		if (menu == 1) { // 곡명으로 검색
+			for (int i = 0; i < list.size(); i++) {
+				if(list.get(i).getTitle().contains(keyword)) {
+					searchList.add(list.get(i));
+				}
+			}
+		} else { // 가수명으로 검색
+			for (int i = 0; i < list.size(); i++) {
+				if(list.get(i).getArtist().contains(keyword)) {
+					searchList.add(list.get(i));
+				}
+			}
+		}
+		
+		
+		return searchList;
+	}
+	
+	public int updateMusic(String title, String upArtist, String upTitle) {
+		int result = 0;
+		
+		for (int i = 0; i < list.size(); i++) {
+			if(list.get(i).getTitle().equals(title)) {
+				list.get(i).setTitle(upTitle);
+				list.get(i).setArtist(upArtist);
+				result = 1;
+				break;
+			}
+		}
+		
+		return result;
+	}
+	
+} // 클래스 끝
