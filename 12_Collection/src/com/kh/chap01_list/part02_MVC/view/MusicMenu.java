@@ -136,12 +136,13 @@ public class MusicMenu {
 		/*
 		System.out.print("검색할 곡 명(키워드만도 가능): ");
 		String keyword = sc.nextLine();
-		*/
+		
 		ArrayList<Music> searchList = mc.searchMusic(keyword);
+		 */
 		
 		// 2. 심화버전
-		System.out.print("1)제목으로 검색");
-		System.out.print("2)가수명으로 검색");
+		System.out.println("1)제목으로 검색");
+		System.out.println("2)가수명으로 검색");
 		System.out.print(">> 메뉴선택: ");
 		int menu = sc.nextInt();
 		sc.nextLine();
@@ -149,7 +150,7 @@ public class MusicMenu {
 		System.out.print("검색 키워드: ");
 		String keyword = sc.nextLine();
 		
-		mc.searchMusic(menu, keyword);
+		ArrayList<Music> searchList = mc.searchMusic(menu, keyword);
 		
 		System.out.println("\n ==== 검색 결과 ====");
 		

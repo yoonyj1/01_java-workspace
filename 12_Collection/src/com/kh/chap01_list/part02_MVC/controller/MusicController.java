@@ -71,7 +71,6 @@ public class MusicController {
 			}
 		}
 		
-		
 		return searchList;
 	}
 	
